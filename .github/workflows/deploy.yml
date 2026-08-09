@@ -1,8 +1,10 @@
-name: Deploy to Vercel
+name: Deploy
 
 on:
   push:
-    branches: [main]
+    branches: ['**']
+  pull_request:
+    branches: ['**']
 
 jobs:
   deploy:
@@ -26,11 +28,21 @@ jobs:
         working-directory: ./portfolio
         run: npm run build
 
-      - name: Deploy to Vercel
+      - name: Deploy to Vercel (Production)
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           vercel-args: --prod
+          working-directory: ./portfolio
+
+      - name: Deploy to Vercel (Preview)
+        if: github.ref != 'refs/heads/main' || github.event_name != 'push'
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           working-directory: ./portfolio
