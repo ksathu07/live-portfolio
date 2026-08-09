@@ -1,0 +1,45 @@
+{
+  "$schema": "./src/schema/clara-config.schema.json",
+  "agent": {
+    "name": "CLARA",
+    "role": "Personal Portfolio & CV Agent"
+  },
+  "owner": {
+    "name": "Sathursan Kamalanathan",
+    "github_username": "ksathu07",
+    "email": "ksathu.07@gmail.com"
+  },
+  "sources": {
+    "personalFolder": "C:\\Personal Info\\sathursan",
+    "projectRoot": "C:\\Projects",
+    "linkedinExport": null,
+    "instagramExport": null
+  },
+  "projectDirectories": [
+    "nexus-ai-hackathon (2)",
+    "project",
+    "Hackathon/AI-Diagnosis-app"
+  ],
+  "excludeProjectNames": [
+    "Agents",
+    "SarlaYash",
+    "node_modules",
+    ".git"
+  ],
+  "paths": {
+    "snapshots": "content/snapshots",
+    "proposed": "content/proposed",
+    "profile": "content/profile.json",
+    "portfolioContent": "portfolio/content/profile.json",
+    "cvs": "content/cvs"
+  },
+  "deploy": {
+    "provider": "vercel",
+    "workingDirectory": "portfolio"
+  },
+  "trust": {
+    "requireApprovalBeforePublish": true,
+    "approvalTimeoutDays": 7,
+    "allowedPublishStates": ["verified"]
+  }
+}

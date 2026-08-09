@@ -1,0 +1,323 @@
+{
+  "schema": "profile/v1",
+  "profile": {
+    "name": "Sathursan Kamalanathan",
+    "headline": "AI & ML Engineering Student · Full-stack Builder",
+    "tagline": "Curious engineer-in-the-making, turning bold ideas into polished, human-centered products — from national healthcare prototypes to live hackathon apps.",
+    "location": "Sri Lanka",
+    "email": "ksathu.07@gmail.com",
+    "phone": null,
+    "availability": "Open to AI/ML and full-stack internships, and creative tech collaborations",
+    "about": [
+      "AI & ML undergrad at SRM Institute of Science and Technology (Ramapuram), with a research-driven A-Level record — A* Mathematics, A-level passes in Further Mathematics, Physics and Accounting.",
+      "I build across the stack: fine-tuning a RoBERTa fake-news classifier in Python, shipping 40-screen TypeScript/React hackathon prototypes, and designing with Photoshop, Premiere Pro and After Effects.",
+      "I'm driven by educational innovation and AI-powered learning tools, and I bring leadership to everything I touch — school prefect, cricket captain, and video-edit club member.",
+      "My goal: build technology that is genuinely useful, honest and human."
+    ],
+    "links": {
+      "github": "https://github.com/ksathu07",
+      "linkedin": "https://www.linkedin.com/in/sathursan-kamalanathan",
+      "instagram": "https://www.instagram.com/sk_sathursan_07/",
+      "website": null
+    },
+    "facts": [
+      { "label": "B.Tech CSE · AI & ML", "value": "2025 – present" },
+      { "label": "Hackathon projects built", "value": "10+" },
+      { "label": "GitHub public repos", "value": "14" },
+      { "label": "2nd-place winner", "value": "SarlaYash Creative Contest" }
+    ]
+  },
+  "education": [
+    {
+      "institution": "SRM Institute of Science and Technology, Ramapuram",
+      "degree": "B.Tech",
+      "field": "Computer Science & Engineering (AI & ML)",
+      "startYear": "2025",
+      "endYear": "present",
+      "details": ["First year"],
+      "source": "Resume_Sathursan.docx"
+    },
+    {
+      "institution": "Adventist International School",
+      "degree": "EDEXCEL International Advanced Levels (A-Levels)",
+      "startYear": null,
+      "endYear": null,
+      "details": [
+        "Mathematics A* · Further Mathematics A · Physics B · Accounting A"
+      ],
+      "source": "Resume_Sathursan.docx"
+    },
+    {
+      "institution": "Adventist International School",
+      "degree": "EDEXCEL IGCSE (O-Levels)",
+      "startYear": null,
+      "endYear": null,
+      "details": [
+        "Mathematics 9 · Physics 9 · Biology 8 · Chemistry 8 · ICT 7 · English 6 · Commerce 5"
+      ],
+      "source": "Resume_Sathursan.docx"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Languages",
+      "items": [
+        { "name": "Python", "level": "intermediate" },
+        { "name": "C", "level": "beginner" },
+        { "name": "TypeScript", "level": "intermediate" },
+        { "name": "JavaScript", "level": "intermediate" },
+        { "name": "HTML / CSS", "level": "intermediate" }
+      ]
+    },
+    {
+      "category": "Frameworks & Tools",
+      "items": [
+        { "name": "React", "level": "intermediate" },
+        { "name": "Next.js", "level": "intermediate" },
+        { "name": "Vite", "level": "intermediate" },
+        { "name": "Tailwind CSS", "level": "intermediate" },
+        { "name": "Flask", "level": "intermediate" },
+        { "name": "SQLite", "level": "intermediate" },
+        { "name": "Google Apps Script", "level": "intermediate" },
+        { "name": "Firebase", "level": "learning" }
+      ]
+    },
+    {
+      "category": "AI / ML",
+      "items": [
+        { "name": "Machine Learning fundamentals", "level": "learning" },
+        { "name": "Fine-tuning (RoBERTa)", "level": "learning" },
+        { "name": "AI agents & workflows", "level": "learning" }
+      ]
+    },
+    {
+      "category": "Creative",
+      "items": [
+        { "name": "Adobe Photoshop", "level": "intermediate" },
+        { "name": "Adobe Premiere Pro", "level": "intermediate" },
+        { "name": "Adobe After Effects", "level": "beginner" },
+        { "name": "Video editing", "level": "intermediate" }
+      ]
+    },
+    {
+      "category": "Professional",
+      "items": [
+        { "name": "Research & content preparation", "level": null },
+        { "name": "Event management", "level": null },
+        { "name": "Team collaboration", "level": null },
+        { "name": "Communication", "level": null }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "indiaflow",
+      "name": "IndiaFlow (Nexus-AI)",
+      "tagline": "Patient-owned lifetime healthcare ecosystem",
+      "description": "A 40-screen national healthcare intelligence prototype: consent-based patient-owned records, an AI layer (risk prediction, medication safety, emergency triage, multi-agent orchestration), security & privacy governance, and rural offline support. Built for a Smart India internal hackathon.",
+      "tech": ["TypeScript", "React 19", "Vite", "Tailwind CSS", "Express", "Firebase Firestore", "PWA"],
+      "year": "2026",
+      "status": "prototype",
+      "links": {
+        "repo": "https://github.com/ksathu07/Nexus-ai-hackathon",
+        "demo": null
+      },
+      "source": "github.json + local nexus-ai-hackathon folder"
+    },
+    {
+      "id": "fake-news-analyzer",
+      "name": "AI Fake-News Credibility Analyzer",
+      "tagline": "Fine-tuned RoBERTa news classifier",
+      "description": "Full pipeline to detect fake news credibility: dataset generation, model fine-tuning (RoBERTa), inference API and a scoring front-end — built in Python.",
+      "tech": ["Python", "scikit-learn", "RoBERTa", "Flask"],
+      "year": "2026",
+      "status": "complete",
+      "links": {
+        "repo": "https://github.com/ksathu07/AI-Fake-News-Credibility-Analyzer"
+      },
+      "source": "github.json + local 'project' folder"
+    },
+    {
+      "id": "swapt-tracker",
+      "name": "Smart Workforce Attendance Tracker",
+      "tagline": "Live-hackathon productivity app",
+      "description": "Live hackathon-built app to log punches and tasks, with a 'Today's Attendance & Tasks' dashboard — Flask + SQLite, built and shipped in a single session.",
+      "tech": ["Python", "Flask", "SQLite", "HTML", "JavaScript"],
+      "year": "2025",
+      "status": "complete",
+      "links": {
+        "repo": "https://github.com/ksathu07/swapt-hackathon"
+      },
+      "source": "github.json"
+    },
+    {
+      "id": "mood-thermometer",
+      "name": "Employee Mood Thermometer",
+      "tagline": "Anonymised stress & burnout detection for teams",
+      "description": "Full-stack web app where employees log their daily mood and HR gets anonymized dashboards to spot stress and burnout early — React-style clean dashboard UI.",
+      "tech": ["Python", "Flask", "HTML", "CSS", "SQLite"],
+      "year": "2025",
+      "status": "complete",
+      "links": {
+        "repo": "https://github.com/ksathu07/employee-mood-thermometer"
+      },
+      "source": "github.json"
+    },
+    {
+      "id": "sheets-user-manager",
+      "name": "Google-Sheets User Manager",
+      "tagline": "A real CRUD app where a Sheet is the database",
+      "description": "A minimal full-flow CRUD app: HTML form → Google Apps Script backend → Google Sheet as database → back to UI. Used to teach the entire request→persist→render path.",
+      "tech": ["HTML", "JavaScript", "Google Apps Script"],
+      "year": "2025",
+      "status": "complete",
+      "links": {
+        "repo": "https://github.com/ksathu07/user-manager-sheets"
+      },
+      "source": "github.json"
+    },
+    {
+      "id": "zero-to-infinity",
+      "name": "Zero-to-Infinity Full-Stack Series",
+      "tagline": "100-days-of-code, production-grade front-end skills",
+      "description": "A growing series of advanced full-stack builds — starting with a smart profile UI system with light/dark theme, sessionStorage persistence and real-time DOM updates.",
+      "tech": ["HTML", "CSS", "JavaScript"],
+      "year": "2026",
+      "status": "in-development",
+      "links": {
+        "repo": "https://github.com/ksathu07/zero-to-infinity-fullstack-series"
+      },
+      "source": "github.json"
+    },
+    {
+      "id": "lead-management",
+      "name": "Mini Enterprise Lead Management System",
+      "tagline": "Structured lead capture for SaaS teams",
+      "description": "A clean HTML/JS lead-capture form with structured flow — built during the SarlaYash full-stack project hackathon.",
+      "tech": ["HTML", "JavaScript", "CSS"],
+      "year": "2025",
+      "status": "complete",
+      "links": {
+        "repo": "https://github.com/ksathu07/mini-enterprise-lead-management-system"
+      },
+      "source": "github.json"
+    },
+    {
+      "id": "jarvis-orion",
+      "name": "JARVIS-Orion Assistant",
+      "tagline": "Personal AI assistant & automation",
+      "description": "A desktop first assistant built in Python, mixing plug-in modules (chat, automation, system tools, installer) — my companion project.",
+      "tech": ["Python", "API integration", "Desktop tools"],
+      "year": "2026",
+      "status": "in-development",
+      "links": {
+        "repo": "https://github.com/ksathu07/jarvis-orion"
+      },
+      "source": "github.json"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "2nd Place — SarlaYash Creative Contest",
+      "date": "2025-10",
+      "details": "Judged on brand alignment and purposeful design. Created a minimalist visual based on the theme 'WILL comes before SKILL', embodying SarlaYash's philosophy.",
+      "source": "Resume_Sathursan.docx"
+    },
+    {
+      "title": "Trainee Intern — SarlaYash Learning Solutions LLP",
+      "date": "2025-11",
+      "details": "Selected for the inaugural 90-day pilot batch through a multi-stage process — recognized for creativity and initiative.",
+      "source": "Resume_Sathursan.docx"
+    },
+    {
+      "title": "Highest School Score — Mathematics (IGCSE)",
+      "date": null,
+      "source": "Resume_Sathursan.docx"
+    },
+    {
+      "title": "Best Academic Results — IAL",
+      "date": null,
+      "source": "Resume_Sathursan.docx"
+    },
+    {
+      "title": "FIDE Blitz Chess Rating 1511",
+      "date": null,
+      "source": "Resume_Sathursan.docx"
+    }
+  ],
+  "experience": [
+    {
+      "organization": "SarlaYash Learning Solutions LLP",
+      "role": "Trainee Intern",
+      "type": "internship",
+      "startDate": "2025-11",
+      "endDate": null,
+      "present": true,
+      "bullets": [
+        "Inaugural pilot cohort focused on experiential learning and real project contributions.",
+        "Creativity, alignment with company values and proactive initiative recognized during selection."
+      ],
+      "source": "Resume_Sathursan.docx"
+    },
+    {
+      "organization": "Adventist International School",
+      "role": "Prefect",
+      "type": "leadership",
+      "startDate": null,
+      "endDate": null,
+      "present": false,
+      "bullets": [
+        "Three-year tenure — led student teams and ran school events.",
+        "Developed communication, coordination and people skills."
+      ],
+      "source": "Resume_Sathursan.docx"
+    },
+    {
+      "organization": "Adventist International School",
+      "role": "School Cricket Captain",
+      "type": "leadership",
+      "startDate": null,
+      "endDate": null,
+      "present": false,
+      "bullets": [
+        "Led the school cricket team — team strategy, morale and on-pitch leadership."
+      ],
+      "source": "Resume_Sathursan.docx"
+    },
+    {
+      "organization": "SRM Ramapuram",
+      "role": "Video Editing Club — Member",
+      "type": "club",
+      "startDate": "2025",
+      "endDate": null,
+      "present": true,
+      "bullets": [
+        "Produce campus event videos using Adobe tools and teammate collaboration."
+      ],
+      "source": "Resume_Sathursan.docx"
+    }
+  ],
+  "certifications": [],
+  "interests": [
+    "Educational innovation",
+    "Video creation & design",
+    "AI and learning technologies",
+    "Cricket & chess",
+    "Workshops and events"
+  ],
+  "meta": {
+    "appVersion": 1,
+    "approvedAt": null,
+    "sourceFiles": [
+      "github.json",
+      "personal/resume_sathursan.txt",
+      "personal/index.json",
+      "projects/nexus-ai-hackathon_2_.json",
+      "projects/project.json",
+      "projects/hackathon_ai-diagnosis-app.json",
+      "https://github.com/ksathu07",
+      "https://www.linkedin.com/in/sathursan-kamalanathan (user-provided; LinkedIn blocks automated checks)",
+      "https://www.instagram.com/sk_sathursan_07/ (HTTP 200 verified)"
+    ]
+  }
+}

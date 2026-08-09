@@ -1,0 +1,145 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CLARA Profile SSOT v1",
+  "description": "The single source of truth that drives the live portfolio and every one-page CV. All facts must be traceable to a real source and end up in meta.provenance.",
+  "type": "object",
+  "required": ["schema", "profile", "meta"],
+  "properties": {
+    "schema": { "const": "profile/v1" },
+    "profile": {
+      "type": "object",
+      "required": ["name", "headline", "tagline"],
+      "properties": {
+        "name": { "type": "string" },
+        "headline": { "type": "string", "description": "Short label, e.g. 'AI & ML Engineering Student'". },
+        "tagline": { "type": "string", "description": "One-sentence positioning line." },
+        "location": { "type": ["string", "null"] },
+        "email": { "type": "string", "format": "email" },
+        "phone": { "type": ["string", "null"] },
+        "dateOfBirth": { "type": ["string", "null"], "description": "ISO date." },
+        "nationality": { "type": ["string", "null"] },
+        "availability": { "type": ["string", "null"], "description": "e.g. 'Internship · Software / AI roles'" },
+        "summary": { "type": ["string", "null"] },
+        "links": {
+          "type": "object",
+          "properties": {
+            "github": { "type": ["string", "null"], "format": "uri" },
+            "linkedin": { "type": ["string", "null"], "format": "uri" },
+            "instagram": { "type": ["string", "null"], "format": "uri" },
+            "leetcode": { "type": ["string", "null"], "format": "uri" },
+            "website": { "type": ["string", "null"], "format": "uri" }
+          }
+        }
+      }
+    },
+    "education": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["institution", "degree", "startYear"],
+        "properties": {
+          "institution": { "type": "string" },
+          "degree": { "type": "string" },
+          "field": { "type": ["string", "null"] },
+          "startYear": { "type": "string", "pattern": "^\\d{4}$" },
+          "endYear": { "type": ["string", "null"], "enum": ["present", null] },
+          "grade": { "type": ["string", "null"] },
+          "details": { "type": "array", "items": { "type": "string" } },
+          "source": { "type": "string", "description": "Snapshot file the fact came from." }
+        }
+      }
+    },
+    "experience": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["organization", "role", "startDate"],
+        "properties": {
+          "organization": { "type": "string" },
+          "role": { "type": "string" },
+          "type": { "enum": ["work", "internship", "volunteer", "leadership", "club"] },
+          "startDate": { "type": "string", "pattern": "^\\d{4}-(0[1-9]|1[0-2])$" },
+          "endDate": { "type": ["string", "null"], "pattern": "^\\d{4}-(0[1-9]|1[0-2])$" },
+          "present": { "type": "boolean" },
+          "bullets": { "type": "array", "items": { "type": "string" } },
+          "source": { "type": "string" }
+        }
+      }
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "description"],
+        "properties": {
+          "id": { "type": "string", "description": "Stable slug." },
+          "name": { "type": "string" },
+          "tagline": { "type": ["string", "null"] },
+          "description": { "type": "string" },
+          "tech": { "type": "array", "items": { "type": "string" } },
+          "year": { "type": ["string", "null"], "pattern": "^\\d{4}$" },
+          "status": { "type": ["string", "null"], "enum": ["prototype", "in-development", "complete", null] },
+          "links": { "type": "object", "properties": {
+            "repo": { "type": ["string", "null"], "format": "uri" },
+            "demo": { "type": ["string", "null"], "format": "uri" },
+            "video": { "type": ["string", "null"], "format": "uri" }
+          }},
+          "highlights": { "type": "array", "items": { "type": "string" } },
+          "source": { "type": "string" }
+        }
+      }
+    },
+    "achievements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title"],
+        "properties": {
+          "title": { "type": "string" },
+          "date": { "type": ["string", "null"], "pattern": "^\\d{4}(-(0[1-9]|1[0-2]))?$" },
+          "place": { "type": ["string", "null"] },
+          "details": { "type": ["string", "null"] },
+          "source": { "type": "string" }
+        }
+      }
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["category", "items"],
+        "properties": {
+          "category": { "type": "string" },
+          "items": {
+            "type": "array",
+            "items": { "type": "object", "required": ["name"], "properties": {
+              "name": { "type": "string" },
+              "level": { "type": "string", "enum": ["beginner", "intermediate", "advanced", "learning", null] }
+            }}
+          }
+        }
+      }
+    },
+    "certifications": {
+      "type": "array",
+      "items": { "type": "object", "required": ["title"], "properties": {
+        "title": { "type": "string" },
+        "issuer": { "type": ["string", "null"] },
+        "date": { "type": ["string", "null"] },
+        "year": { "type": ["string", "null"] },
+        "source": { "type": "string" }
+      }}
+    },
+    "volunteering": { "type": "array", "items": { "type": "object" } },
+    "interests": { "type": "array", "items": { "type": "string" } },
+    "meta": {
+      "type": "object",
+      "required": ["appVersion"],
+      "properties": {
+        "appVersion": { "const": 1 },
+        "approvedAt": { "type": "string" },
+        "sourceFiles": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

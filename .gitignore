@@ -1,0 +1,29 @@
+# Node
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+
+# Build artifacts
+portfolio/.next/
+portfolio/out/
+
+# CLARA data (regenerable / sensitive)
+content/snapshots/
+
+# Generated CVs
+content/cvs/
+
+# Local env & secrets
+.env
+.env.local
+*.local
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Python (project folders)
+venv/
+__pycache__/
+*.pyc

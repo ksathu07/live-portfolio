@@ -1,0 +1,21 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "clara",
+  "permission": {
+    "bash": {
+      "*": "allow",
+      "git push*": "ask",
+      "git commit*": "ask",
+      "git checkout*": "ask",
+      "git reset*": "ask",
+      "git clean*": "ask",
+      "Remove-Item*": "ask",
+      "rm -rf*": "ask"
+    },
+    "external_directory": {
+      "*": "deny",
+      "C:/Personal Info/sathursan/**": "allow",
+      "C:/Projects/**": "allow"
+    }
+  }
+}
