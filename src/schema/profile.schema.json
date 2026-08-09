@@ -1,17 +1,17 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "CLARA Profile SSOT v1",
-  "description": "The single source of truth that drives the live portfolio and every one-page CV. All facts must be traceable to a real source and end up in meta.provenance.",
+  "title": "CLARA Profile SSOT v2",
+  "description": "The single source of truth that drives the live portfolio and every one-page CV. All facts must be traceable to a real source. Proof media lives in subfolders of the personal info directory and is surfaced here.",
   "type": "object",
   "required": ["schema", "profile", "meta"],
   "properties": {
-    "schema": { "const": "profile/v1" },
+    "schema": { "const": "profile/v2" },
     "profile": {
       "type": "object",
       "required": ["name", "headline", "tagline"],
       "properties": {
         "name": { "type": "string" },
-        "headline": { "type": "string", "description": "Short label, e.g. 'AI & ML Engineering Student'". },
+        "headline": { "type": "string", "description": "Short label, e.g. 'AI & ML Engineering Student'." },
         "tagline": { "type": "string", "description": "One-sentence positioning line." },
         "location": { "type": ["string", "null"] },
         "email": { "type": "string", "format": "email" },
@@ -19,7 +19,20 @@
         "dateOfBirth": { "type": ["string", "null"], "description": "ISO date." },
         "nationality": { "type": ["string", "null"] },
         "availability": { "type": ["string", "null"], "description": "e.g. 'Internship · Software / AI roles'" },
+        "about": { "type": "array", "items": { "type": "string" }, "description": "Short bio paragraphs." },
         "summary": { "type": ["string", "null"] },
+        "facts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["label", "value"],
+            "properties": {
+              "label": { "type": "string" },
+              "value": { "type": "string" }
+            }
+          },
+          "description": "Quick hero facts / stats."
+        },
         "links": {
           "type": "object",
           "properties": {
@@ -27,8 +40,24 @@
             "linkedin": { "type": ["string", "null"], "format": "uri" },
             "instagram": { "type": ["string", "null"], "format": "uri" },
             "leetcode": { "type": ["string", "null"], "format": "uri" },
+            "youtube": { "type": ["string", "null"], "format": "uri" },
+            "vimeo": { "type": ["string", "null"], "format": "uri" },
+            "behance": { "type": ["string", "null"], "format": "uri" },
+            "dribbble": { "type": ["string", "null"], "format": "uri" },
             "website": { "type": ["string", "null"], "format": "uri" }
           }
+        },
+        "extraLinks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["label", "url"],
+            "properties": {
+              "label": { "type": "string" },
+              "url": { "type": "string", "format": "uri" }
+            }
+          },
+          "description": "Additional links surfaced on the site (Behance, YouTube channel, etc.)."
         }
       }
     },
@@ -122,23 +151,136 @@
     },
     "certifications": {
       "type": "array",
-      "items": { "type": "object", "required": ["title"], "properties": {
-        "title": { "type": "string" },
-        "issuer": { "type": ["string", "null"] },
-        "date": { "type": ["string", "null"] },
-        "year": { "type": ["string", "null"] },
-        "source": { "type": "string" }
-      }}
+      "items": {
+        "type": "object",
+        "required": ["title"],
+        "properties": {
+          "title": { "type": "string" },
+          "issuer": { "type": ["string", "null"] },
+          "date": { "type": ["string", "null"] },
+          "year": { "type": ["string", "null"] },
+          "proof": { "$ref": "#/definitions/proofRef" },
+          "source": { "type": "string" }
+        }
+      }
+    },
+    "videoPortfolio": {
+      "type": "object",
+      "description": "Video editing / creative work surfaced as a portfolio section.",
+      "properties": {
+        "headline": { "type": "string" },
+        "summary": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["title"],
+            "properties": {
+              "title": { "type": "string" },
+              "description": { "type": ["string", "null"] },
+              "role": { "type": ["string", "null"], "description": "e.g. 'Editor', 'Motion designer'." },
+              "year": { "type": ["string", "null"] },
+              "tools": { "type": "array", "items": { "type": "string" } },
+              "links": {
+                "type": "object",
+                "properties": {
+                  "watch": { "type": ["string", "null"], "format": "uri" },
+                  "youtube": { "type": ["string", "null"], "format": "uri" },
+                  "vimeo": { "type": ["string", "null"], "format": "uri" },
+                  "embed": { "type": ["string", "null"], "format": "uri" }
+                }
+              },
+              "proof": { "$ref": "#/definitions/proofRef" }
+            }
+          }
+        }
+      }
+    },
+    "portfolioSections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title"],
+        "properties": {
+          "id": { "type": "string", "description": "Stable slug for the section." },
+          "title": { "type": "string" },
+          "description": { "type": ["string", "null"] },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["title"],
+              "properties": {
+                "title": { "type": "string" },
+                "subtitle": { "type": ["string", "null"] },
+                "description": { "type": ["string", "null"] },
+                "year": { "type": ["string", "null"] },
+                "links": {
+                  "type": "object",
+                  "properties": {
+                    "view": { "type": ["string", "null"], "format": "uri" },
+                    "download": { "type": ["string", "null"], "format": "uri" }
+                  }
+                },
+                "proof": { "$ref": "#/definitions/proofRef" }
+              }
+            }
+          }
+        }
+      },
+      "description": "Arbitrary proof-backed portfolio sections (design work, photography, etc.)."
     },
     "volunteering": { "type": "array", "items": { "type": "object" } },
     "interests": { "type": "array", "items": { "type": "string" } },
+    "proof": {
+      "type": "object",
+      "description": "Global proof references keyed by proof id.",
+      "propertyNames": { "type": "string" },
+      "additionalProperties": { "$ref": "#/definitions/proofRef" }
+    },
     "meta": {
       "type": "object",
       "required": ["appVersion"],
       "properties": {
-        "appVersion": { "const": 1 },
-        "approvedAt": { "type": "string" },
-        "sourceFiles": { "type": "array", "items": { "type": "string" } }
+        "appVersion": { "type": "number" },
+        "approvedAt": { "type": ["string", "null"] },
+        "sourceFiles": { "type": "array", "items": { "type": "string" } },
+        "lastIngestedAt": { "type": "string" },
+        "sources": {
+          "type": "object",
+          "description": "Counts and paths of ingested personal subfolders.",
+          "properties": {
+            "personalRoot": { "type": "string" },
+            "subfolders": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["name", "path"],
+                "properties": {
+                  "name": { "type": "string" },
+                  "path": { "type": "string" },
+                  "fileCount": { "type": "number" },
+                  "mediaCount": { "type": "number" },
+                  "linksCount": { "type": "number" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "proofRef": {
+      "type": "object",
+      "description": "Reference to proof media found in personal subfolders. id resolves into proof map; files/links are auto-indexed references.",
+      "properties": {
+        "id": { "type": "string", "description": "Stable id resolved from the global proof map." },
+        "kind": { "type": "string", "enum": ["image", "video", "document", "link", "media"], "description": "Rough type of the proof." },
+        "label": { "type": ["string", "null"] },
+        "path": { "type": ["string", "null"], "description": "Path relative to the personal info root." },
+        "url": { "type": ["string", "null"] },
+        "source": { "type": "string" }
       }
     }
   }

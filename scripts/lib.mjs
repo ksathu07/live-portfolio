@@ -76,3 +76,53 @@ export function readTextBestEffort(file) {
 export function dedupe(arr) {
   return [...new Set(arr)]
 }
+
+export function mediaRoot() {
+  return config.sources.personalFolder
+}
+
+export function parseRootLinks(text) {
+  if (!text) return []
+  return text
+    .split(/\r?\n/)
+    .map((l) => l.trim())
+    .filter((l) => l && !l.startsWith('#') && !l.startsWith('//'))
+}
+
+export function listImages(dir) {
+  if (!existsSync(dir)) return []
+  return readdirSync(dir)
+    .filter((n) => /\.(jpg|jpeg|png|gif|webp|svg|bmp|avif)$/i.test(n))
+    .map((n) => ({ name: n, path: path.join(dir, n) }))
+}
+
+export function listVideos(dir) {
+  if (!existsSync(dir)) return []
+  return readdirSync(dir)
+    .filter((n) => /\.(mp4|mov|mkv|webm|avi)$/i.test(n))
+    .map((n) => ({ name: n, path: path.join(dir, n) }))
+}
+
+export function safeReadJson(file) {
+  try {
+    return JSON.parse(readFileSync(file, 'utf8'))
+  } catch {
+    return null
+  }
+}
+
+export function proofRecords(mediaList, sourcePrefix) {
+  const out = {}
+  for (const m of mediaList) {
+    const slug = slugify(m.name.replace(/\.[^.]+$/, ''))
+    const id = `${sourcePrefix}-${slug}`
+    out[id] = {
+      id,
+      kind: m.kind || 'image',
+      path: m.path || m.name,
+      source: m.source || sourcePrefix,
+      label: m.name,
+    }
+  }
+  return out
+}

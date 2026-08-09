@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { videoPortfolio } from "@/lib/profile";
 
-const links = [
+const baseLinks = [
   ["About", "#about"],
   ["Skills", "#skills"],
   ["Projects", "#projects"],
@@ -10,6 +11,18 @@ const links = [
   ["Timeline", "#experience"],
   ["Contact", "#contact"],
 ] as const;
+
+const links = videoPortfolio && videoPortfolio.items?.length > 0
+  ? [
+      ["About", "#about"],
+      ["Skills", "#skills"],
+      ["Projects", "#projects"],
+      ["Video", "#video-portfolio"],
+      ["Achievements", "#achievements"],
+      ["Timeline", "#experience"],
+      ["Contact", "#contact"],
+    ] as const
+  : baseLinks;
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);

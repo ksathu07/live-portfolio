@@ -15,10 +15,24 @@ let data
 try { data = JSON.parse(readFileSync(target, 'utf8')) }
 catch (e) { console.error(`Cannot read JSON: ${target}`); process.exit(2) }
 
-if (data.schema !== 'profile/v1') err(`schema must be "profile/v1" (got ${data.schema ?? 'missing'})`)
+if (data.schema !== 'profile/v1' && data.schema !== 'profile/v2') err(`schema must be "profile/v1" or "profile/v2" (got ${data.schema ?? 'missing'})`)
 if (!data.profile?.name) err('profile.name is required')
 if (!data.profile?.headline) err('profile.headline is required')
 if (!data.profile?.tagline) err('profile.tagline is required')
+
+if (Array.isArray(data.profile?.extraLinks)) {
+  for (const link of data.profile.extraLinks) {
+    if (!link.label) err('extraLinks entry missing label')
+    if (!link.url) err(`extraLinks "${link.label}" missing url`)
+  }
+}
+
+if (Array.isArray(data.profile?.facts)) {
+  for (const f of data.profile.facts) {
+    if (!f.label) err('profile.facts entry missing label')
+    if (!f.value) err(`profile.facts "${f.label}" missing value`)
+  }
+}
 
 const ids = new Set()
 for (const p of data.projects ?? []) {
@@ -53,8 +67,36 @@ if (data.meta?.approvedAt) {
   if (isNaN(d)) err(`meta.approvedAt is not a valid date: ${data.meta.approvedAt}`)
 }
 
-const unknown = Object.keys(data).filter((k) => !['schema', 'profile', 'education', 'experience', 'projects', 'achievements', 'skills', 'certifications', 'volunteering', 'interests', 'meta'].includes(k))
+const allowedTop = ['schema', 'profile', 'education', 'experience', 'projects', 'achievements', 'skills', 'certifications', 'volunteering', 'interests', 'meta', 'videoPortfolio', 'portfolioSections', 'proof']
+const unknown = Object.keys(data).filter((k) => !allowedTop.includes(k))
 if (unknown.length) err(`unknown top-level keys: ${unknown.join(', ')}`)
+
+if (data.videoPortfolio) {
+  if (!data.videoPortfolio.headline) warn('videoPortfolio.headline is recommended')
+  if (Array.isArray(data.videoPortfolio.items)) {
+    for (const it of data.videoPortfolio.items) {
+      if (!it.title) err('videoPortfolio.items entry missing title')
+    }
+  }
+}
+
+if (Array.isArray(data.portfolioSections)) {
+  for (const sec of data.portfolioSections) {
+    if (!sec.id) err('portfolioSections entry missing id')
+    if (!sec.title) err('portfolioSections entry missing title')
+    if (Array.isArray(sec.items)) {
+      for (const it of sec.items) {
+        if (!it.title) err(`portfolioSections "${sec.id}" item missing title`)
+      }
+    }
+  }
+}
+
+if (data.proof && typeof data.proof === 'object') {
+  for (const [id, p] of Object.entries(data.proof)) {
+    if (p.id && p.id !== id) err(`proof key "${id}" does not match its id "${p.id}"`)
+  }
+}
 
 console.log(`Validating ${target}\n`)
 for (const w of warnings) console.log(`  WARN  ${w}`)

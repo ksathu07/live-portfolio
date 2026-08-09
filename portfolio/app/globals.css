@@ -19,33 +19,145 @@ body {
   background-attachment: fixed;
 }
 
-@layer components {
-  .text-gradient {
-    @apply bg-gradient-to-r from-cyan-300 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent;
-  }
-
-  .glass {
-    @apply bg-white/[0.04] border border-white/10 backdrop-blur-xl;
-  }
-
-  .section-label {
-    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-violet-300/90;
-  }
-
-  .card-hover {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:border-violet-400/40 hover:bg-white/[0.06] hover:shadow-[0_20px_60px_-15px_rgba(139,92,246,0.35)];
-  }
-
-  .status-pill {
-    @apply inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-medium text-zinc-200 transition-colors hover:border-violet-400/50 hover:text-white;
-  }
+/* Animated gradient text */
+.text-gradient {
+  @apply bg-gradient-to-r from-cyan-300 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent;
+  background-size: 200% auto;
+  animation: gradientShift 6s ease infinite;
 }
 
+/* Shimmer effect for highlights */
+.text-shimmer {
+  @apply bg-gradient-to-r from-cyan-300 via-white to-fuchsia-400 bg-clip-text text-transparent;
+  background-size: 200% auto;
+  animation: shimmer 2.5s linear infinite;
+}
+
+/* Glass morphism */
+.glass {
+  @apply bg-white/[0.04] border border-white/10 backdrop-blur-xl;
+}
+
+.glass-strong {
+  @apply bg-white/[0.07] border border-white/15 backdrop-blur-2xl;
+}
+
+/* Section label with animated dot */
+.section-label {
+  @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-violet-300/90;
+}
+
+.section-label::before {
+  content: "";
+  @apply h-1.5 w-1.5 rounded-full bg-violet-400;
+  animation: pulseSlow 2s ease-in-out infinite;
+}
+
+/* Card hover with glow */
+.card-hover {
+  @apply transition-all duration-500 ease-out;
+}
+
+.card-hover:hover {
+  @apply -translate-y-2 border-violet-400/40 bg-white/[0.06];
+  box-shadow: 0 25px 60px -15px rgba(139, 92, 246, 0.35),
+              0 0 40px -10px rgba(34, 211, 238, 0.2);
+}
+
+/* Status pill with glow on hover */
+.status-pill {
+  @apply inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-medium text-zinc-200 transition-all duration-300;
+}
+
+.status-pill:hover {
+  @apply border-violet-400/50 text-white;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+/* Animated border gradient */
+.border-gradient {
+  position: relative;
+  border: none;
+}
+
+.border-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #22d3ee, #8b5cf6, #d946ef, #22d3ee);
+  background-size: 300% 300%;
+  animation: borderFlow 3s linear infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Glow ring */
+.glow-ring {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3),
+              0 0 60px rgba(139, 92, 246, 0.1);
+}
+
+/* Animated underline */
+.animated-underline {
+  position: relative;
+}
+
+.animated-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #22d3ee, #8b5cf6);
+  transition: width 0.4s ease-out;
+}
+
+.animated-underline:hover::after {
+  width: 100%;
+}
+
+/* Noise texture overlay */
+.noise::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07070c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8b5cf6, #d946ef);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a78bfa, #e879f9);
+}
+
+/* Selection */
 ::selection {
   background: rgba(139, 92, 246, 0.4);
   color: #fff;
 }
 
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {

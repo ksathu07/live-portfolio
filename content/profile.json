@@ -1,9 +1,9 @@
 {
-  "schema": "profile/v1",
+  "schema": "profile/v2",
   "profile": {
     "name": "Sathursan Kamalanathan",
-    "headline": "AI & ML Engineering Student · Full-stack Builder",
-    "tagline": "Curious engineer-in-the-making, turning bold ideas into polished, human-centered products — from national healthcare prototypes to live hackathon apps.",
+    "headline": "AI & ML Engineering Student · Full-stack Builder · Video Editor",
+    "tagline": "Curious engineer-in-the-making, turning bold ideas into polished, human-centered products — from national healthcare prototypes to live hackathon apps and edited reels.",
     "location": "Sri Lanka",
     "email": "ksathu.07@gmail.com",
     "phone": null,
@@ -18,8 +18,13 @@
       "github": "https://github.com/ksathu07",
       "linkedin": "https://www.linkedin.com/in/sathursan-kamalanathan",
       "instagram": "https://www.instagram.com/sk_sathursan_07/",
+      "youtube": null,
+      "vimeo": null,
+      "behance": null,
+      "dribbble": null,
       "website": null
     },
+    "extraLinks": [],
     "facts": [
       { "label": "B.Tech CSE · AI & ML", "value": "2025 – present" },
       { "label": "Hackathon projects built", "value": "10+" },
@@ -35,7 +40,7 @@
       "startYear": "2025",
       "endYear": "present",
       "details": ["First year"],
-      "source": "Resume_Sathursan.docx"
+      "source": "personal/docs/resume_sathursan.docx"
     },
     {
       "institution": "Adventist International School",
@@ -45,7 +50,7 @@
       "details": [
         "Mathematics A* · Further Mathematics A · Physics B · Accounting A"
       ],
-      "source": "Resume_Sathursan.docx"
+      "source": "personal/docs/resume_sathursan.docx"
     },
     {
       "institution": "Adventist International School",
@@ -55,7 +60,7 @@
       "details": [
         "Mathematics 9 · Physics 9 · Biology 8 · Chemistry 8 · ICT 7 · English 6 · Commerce 5"
       ],
-      "source": "Resume_Sathursan.docx"
+      "source": "personal/docs/resume_sathursan.docx"
     }
   ],
   "skills": [
@@ -120,8 +125,10 @@
       "status": "prototype",
       "links": {
         "repo": "https://github.com/ksathu07/Nexus-ai-hackathon",
-        "demo": null
+        "demo": null,
+        "video": null
       },
+      "highlights": [],
       "source": "github.json + local nexus-ai-hackathon folder"
     },
     {
@@ -133,8 +140,11 @@
       "year": "2026",
       "status": "complete",
       "links": {
-        "repo": "https://github.com/ksathu07/AI-Fake-News-Credibility-Analyzer"
+        "repo": "https://github.com/ksathu07/AI-Fake-News-Credibility-Analyzer",
+        "demo": null,
+        "video": null
       },
+      "highlights": [],
       "source": "github.json + local 'project' folder"
     },
     {
@@ -146,8 +156,11 @@
       "year": "2025",
       "status": "complete",
       "links": {
-        "repo": "https://github.com/ksathu07/swapt-hackathon"
+        "repo": "https://github.com/ksathu07/swapt-hackathon",
+        "demo": null,
+        "video": null
       },
+      "highlights": [],
       "source": "github.json"
     },
     {
@@ -159,8 +172,11 @@
       "year": "2025",
       "status": "complete",
       "links": {
-        "repo": "https://github.com/ksathu07/employee-mood-thermometer"
+        "repo": "https://github.com/ksathu07/employee-mood-thermometer",
+        "demo": null,
+        "video": null
       },
+      "highlights": [],
       "source": "github.json"
     },
     {
@@ -172,8 +188,11 @@
       "year": "2025",
       "status": "complete",
       "links": {
-        "repo": "https://github.com/ksathu07/user-manager-sheets"
+        "repo": "https://github.com/ksathu07/user-manager-sheets",
+        "demo": null,
+        "video": null
       },
+      "highlights": [],
       "source": "github.json"
     },
     {
@@ -185,8 +204,11 @@
       "year": "2026",
       "status": "in-development",
       "links": {
-        "repo": "https://github.com/ksathu07/zero-to-infinity-fullstack-series"
+        "repo": "https://github.com/ksathu07/zero-to-infinity-fullstack-series",
+        "demo": null,
+        "video": null
       },
+      "highlights": [],
       "source": "github.json"
     },
     {
@@ -198,8 +220,11 @@
       "year": "2025",
       "status": "complete",
       "links": {
-        "repo": "https://github.com/ksathu07/mini-enterprise-lead-management-system"
+        "repo": "https://github.com/ksathu07/mini-enterprise-lead-management-system",
+        "demo": null,
+        "video": null
       },
+      "highlights": [],
       "source": "github.json"
     },
     {
@@ -211,8 +236,11 @@
       "year": "2026",
       "status": "in-development",
       "links": {
-        "repo": "https://github.com/ksathu07/jarvis-orion"
+        "repo": "https://github.com/ksathu07/jarvis-orion",
+        "demo": null,
+        "video": null
       },
+      "highlights": [],
       "source": "github.json"
     }
   ],
@@ -221,28 +249,31 @@
       "title": "2nd Place — SarlaYash Creative Contest",
       "date": "2025-10",
       "details": "Judged on brand alignment and purposeful design. Created a minimalist visual based on the theme 'WILL comes before SKILL', embodying SarlaYash's philosophy.",
-      "source": "Resume_Sathursan.docx"
+      "source": "personal/docs/resume_sathursan.docx"
     },
     {
       "title": "Trainee Intern — SarlaYash Learning Solutions LLP",
       "date": "2025-11",
       "details": "Selected for the inaugural 90-day pilot batch through a multi-stage process — recognized for creativity and initiative.",
-      "source": "Resume_Sathursan.docx"
+      "source": "personal/docs/resume_sathursan.docx"
     },
     {
       "title": "Highest School Score — Mathematics (IGCSE)",
       "date": null,
-      "source": "Resume_Sathursan.docx"
+      "details": null,
+      "source": "personal/docs/resume_sathursan.docx"
     },
     {
       "title": "Best Academic Results — IAL",
       "date": null,
-      "source": "Resume_Sathursan.docx"
+      "details": null,
+      "source": "personal/docs/resume_sathursan.docx"
     },
     {
       "title": "FIDE Blitz Chess Rating 1511",
       "date": null,
-      "source": "Resume_Sathursan.docx"
+      "details": null,
+      "source": "personal/docs/resume_sathursan.docx"
     }
   ],
   "experience": [
@@ -257,7 +288,7 @@
         "Inaugural pilot cohort focused on experiential learning and real project contributions.",
         "Creativity, alignment with company values and proactive initiative recognized during selection."
       ],
-      "source": "Resume_Sathursan.docx"
+      "source": "personal/docs/resume_sathursan.docx"
     },
     {
       "organization": "Adventist International School",
@@ -270,7 +301,7 @@
         "Three-year tenure — led student teams and ran school events.",
         "Developed communication, coordination and people skills."
       ],
-      "source": "Resume_Sathursan.docx"
+      "source": "personal/docs/resume_sathursan.docx"
     },
     {
       "organization": "Adventist International School",
@@ -282,7 +313,7 @@
       "bullets": [
         "Led the school cricket team — team strategy, morale and on-pitch leadership."
       ],
-      "source": "Resume_Sathursan.docx"
+      "source": "personal/docs/resume_sathursan.docx"
     },
     {
       "organization": "SRM Ramapuram",
@@ -294,10 +325,16 @@
       "bullets": [
         "Produce campus event videos using Adobe tools and teammate collaboration."
       ],
-      "source": "Resume_Sathursan.docx"
+      "source": "personal/docs/resume_sathursan.docx"
     }
   ],
   "certifications": [],
+  "videoPortfolio": {
+    "headline": "Video Editing & Motion Design",
+    "summary": "Selected edits and motion design work from campus events and personal projects.",
+    "items": []
+  },
+  "portfolioSections": [],
   "interests": [
     "Educational innovation",
     "Video creation & design",
@@ -305,19 +342,25 @@
     "Cricket & chess",
     "Workshops and events"
   ],
+  "proof": {},
   "meta": {
-    "appVersion": 1,
+    "appVersion": 2,
     "approvedAt": null,
+    "lastIngestedAt": null,
     "sourceFiles": [
       "github.json",
-      "personal/resume_sathursan.txt",
       "personal/index.json",
+      "personal/docs/resume_sathursan.docx",
       "projects/nexus-ai-hackathon_2_.json",
       "projects/project.json",
       "projects/hackathon_ai-diagnosis-app.json",
       "https://github.com/ksathu07",
-      "https://www.linkedin.com/in/sathursan-kamalanathan (user-provided; LinkedIn blocks automated checks)",
-      "https://www.instagram.com/sk_sathursan_07/ (HTTP 200 verified)"
-    ]
+      "https://www.linkedin.com/in/sathursan-kamalanathan",
+      "https://www.instagram.com/sk_sathursan_07/"
+    ],
+    "sources": {
+      "personalRoot": "C:\\Personal Info\\sathursan",
+      "subfolders": []
+    }
   }
 }
