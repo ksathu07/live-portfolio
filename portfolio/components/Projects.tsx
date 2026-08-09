@@ -16,11 +16,6 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
         ))}
       </div>
       <div className="mt-5 flex gap-4 text-sm">
-        {project.links?.repo && (
-          <a href={project.links.repo} target="_blank" rel="noreferrer" className="text-violet-300 transition-colors hover:text-white">
-            Code ↗
-          </a>
-        )}
         {project.links?.demo && (
           <a href={project.links.demo} target="_blank" rel="noreferrer" className="text-violet-300 transition-colors hover:text-white">
             Live demo ↗

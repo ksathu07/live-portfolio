@@ -22,7 +22,6 @@ export default function Achievements() {
               <div className="flex-1">
                 <h3 className="font-medium text-white">{ach.title}</h3>
                 {ach.details && <p className="mt-1 text-sm leading-relaxed text-zinc-400">{ach.details}</p>}
-                {ach.source && <p className="mt-1 text-xs text-zinc-600">source: {ach.source}</p>}
               </div>
               {ach.date && (
                 <span className="shrink-0 rounded-full border border-white/10 px-3 py-1 text-xs text-zinc-400">{ach.date}</span>
