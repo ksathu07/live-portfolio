@@ -1,9 +1,12 @@
 "use client";
 
-import { profile } from "@/lib/profile";
+import { profile, proof } from "@/lib/profile";
 import { useEffect, useState } from "react";
 
 const p = profile.profile;
+
+// First image-kind proof record (e.g. a profile photo) — fully data-driven.
+const avatarProof = Object.values(proof).find((r) => r.kind === "image" && r.path);
 
 function Particle({ delay, x, y, size }: { delay: number; x: number; y: number; size: number }) {
   return (
@@ -27,11 +30,15 @@ export default function Hero() {
     setMounted(true);
   }, []);
 
-  const facts = [
-    p.location ?? "",
-    profile.education?.[0]?.institution ?? "Student",
-    `${profile.projects?.length ?? 0} projects shipped`,
-  ].filter(Boolean);
+  // Facts come from the SSOT (profile.facts); fall back to computed ones if empty.
+  const ssotFacts = p.facts ?? [];
+  const facts = ssotFacts.length
+    ? ssotFacts.map((f) => `${f.label}: ${f.value}`)
+    : [
+        p.location ?? "",
+        profile.education?.[0]?.institution ?? "Student",
+        `${profile.projects?.length ?? 0} projects shipped`,
+      ].filter(Boolean);
 
   const particles = [
     { delay: 0, x: 15, y: 20, size: 4 },
@@ -69,6 +76,24 @@ export default function Hero() {
       />
 
       <div className="relative mx-auto w-full max-w-6xl px-6">
+        <div className="flex flex-col items-start gap-10 lg:flex-row lg:items-center">
+          {/* Avatar photo (from proof map, if any) */}
+          {avatarProof && (
+            <div
+              className={`shrink-0 transition-all duration-1000 delay-100 ${mounted ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"}`}
+            >
+              <div className="relative">
+                <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-cyan-400 via-violet-500 to-fuchsia-500 opacity-70 blur-md animate-pulse-glow" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`/proof/${avatarProof.path}`}
+                  alt={avatarProof.label ?? "Profile photo"}
+                  className="relative h-40 w-40 rounded-full border-2 border-white/20 object-cover sm:h-48 sm:w-48 lg:h-56 lg:w-56"
+                />
+              </div>
+            </div>
+          )}
+
         <div className="max-w-3xl">
           {/* Status badge */}
           <div
@@ -153,6 +178,7 @@ export default function Hero() {
               </span>
             ))}
           </div>
+        </div>
         </div>
       </div>
 

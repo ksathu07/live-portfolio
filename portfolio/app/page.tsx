@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
+import Certifications from "@/components/Certifications";
 import Projects from "@/components/Projects";
 import { VideoPortfolioSection } from "@/components/VideoPortfolio";
 import { videoPortfolio } from "@/lib/profile";
@@ -17,6 +18,7 @@ export default function Page() {
       <Hero />
       <About />
       <Skills />
+      <Certifications />
       <Projects />
       {videoPortfolio && videoPortfolio.items?.length > 0 && (
         <VideoPortfolioSection data={videoPortfolio} />
