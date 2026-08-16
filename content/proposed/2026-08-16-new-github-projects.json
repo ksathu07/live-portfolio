@@ -1,0 +1,109 @@
+{
+  "schema": "proposal/v1",
+  "date": "2026-08-16",
+  "topic": "Add newly published GitHub projects",
+  "status": "pending",
+  "summary": "Add linkedin-automation, lifeOS, ai-diagnosis-app and Live-portfolio as projects; update GitHub repo count and add verified Flutter/Dart/Docker skills.",
+  "actions": {
+    "projects.add": [
+      {
+        "id": "linkedin-automation",
+        "name": "LinkedIn Automation Suite",
+        "tagline": "Official-API LinkedIn posting with scheduling & AI content",
+        "description": "Python automation suite: OAuth integration with LinkedIn's official API (org-page posting, scheduling, analytics), a Playwright browser bot for human-like engagement, and a local-LLM/Ollama content generator. Ships with Docker Compose, PostgreSQL and Redis.",
+        "tech": ["Python", "FastAPI", "SQLAlchemy", "Playwright", "Docker", "Redis", "Ollama"],
+        "year": "2026",
+        "status": "complete",
+        "links": {
+          "repo": "https://github.com/ksathu07/linkedin-automation",
+          "demo": null,
+          "video": null
+        },
+        "highlights": ["Schedules posts via cron (APScheduler)", "Dockerized full stack (app + bot + generator)"],
+        "source": "projects/agents_linkedin-automation.json"
+      },
+      {
+        "id": "lifeos",
+        "name": "lifeOS — Career Twin",
+        "tagline": "Flutter career-twin app with growth predictions",
+        "description": "A Flutter 'career twin' app: human growth graph and prediction engine, skill graphs per profession, career-path ontology, opportunity matching (internships, hackathons, scholarships) and AI memory system — backed by datasets and research docs.",
+        "tech": ["Flutter", "Dart", "JSON ontologies"],
+        "year": "2026",
+        "status": "in-development",
+        "links": {
+          "repo": "https://github.com/ksathu07/lifeos",
+          "demo": null,
+          "video": null
+        },
+        "highlights": ["Growth-graph + prediction-engine architecture", "12 career paths with skill graphs and opportunities data"],
+        "source": "projects/lifeos.json"
+      },
+      {
+        "id": "ai-diagnosis-app",
+        "name": "AI Diagnosis App",
+        "tagline": "Healthcare diagnosis hackathon prototype",
+        "description": "A healthcare diagnosis hackathon prototype: NX + TypeScript monorepo with an OpenAPI spec, shared API client, artifact apps and a patient-facing mockup, plus backend packaged as a zip.",
+        "tech": ["TypeScript", "NX", "React", "OpenAPI"],
+        "year": "2026",
+        "status": "prototype",
+        "links": {
+          "repo": "https://github.com/ksathu07/ai-diagnosis-app",
+          "demo": null,
+          "video": null
+        },
+        "highlights": [],
+        "source": "projects/hackathon_ai-diagnosis-app.json"
+      },
+      {
+        "id": "live-portfolio",
+        "name": "Live Portfolio & CV Agent",
+        "tagline": "Data-driven portfolio + one-page CV pipeline",
+        "description": "CLARA: a Next.js portfolio generated entirely from a single verified profile.json, with snapshot scripts (GitHub, personal docs, project folders), validation, and per-role one-page CV builder (HTML + PDF).",
+        "tech": ["TypeScript", "React", "Next.js", "Tailwind CSS"],
+        "year": "2026",
+        "status": "complete",
+        "links": {
+          "repo": "https://github.com/ksathu07/live-portfolio",
+          "demo": null,
+          "video": null
+        },
+        "highlights": ["SSOT-driven: site never contradicts profile.json", "Role-specific CVs built from job descriptions"],
+        "source": "projects/agents_live-portfolio.json"
+      }
+    ],
+    "profile.facts": {
+      "update": [
+        {
+          "label": "GitHub public repos",
+          "value": "14",
+          "newValue": "29"
+        }
+      ]
+    },
+    "skills.add": [
+      { "category": "Frameworks & Tools", "items": [
+        { "name": "Flutter", "level": "learning" },
+        { "name": "Dart", "level": "learning" },
+        { "name": "Docker", "level": "learning" }
+      ] }
+    ],
+    "meta": {
+      "addSourceFiles": [
+        "projects/agents_linkedin-automation.json",
+        "projects/lifeos.json",
+        "projects/agents_live-portfolio.json"
+      ]
+    }
+  },
+  "provenance": {
+    "linkedin-automation": "github.json + project folder snapshot (README, requirements.txt, folder layout)",
+    "lifeos": "github.json + project folder snapshot (pubspec, docs, folder layout)",
+    "ai-diagnosis-app": "github.json + project folder snapshot (README, package.json)",
+    "live-portfolio": "github.json + project folder snapshot (this repo)",
+    "repoCount": "github.json snapshot: 29 repos"
+  },
+  "unsure": [
+    "linkedin-automation description omits the private browser-bot's LinkedIn terms-of-service nuance — phrased as official-API automation on the API app; browser bot exists as separate component.",
+    "lifeOS internal package name is 'twingraph_ai' — used lifeOS repo name for the portfolio."
+  ]
+}

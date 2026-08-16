@@ -28,7 +28,7 @@
     "facts": [
       { "label": "B.Tech CSE · AI & ML", "value": "2025 – present" },
       { "label": "Hackathon projects built", "value": "10+" },
-      { "label": "GitHub public repos", "value": "14" },
+      { "label": "GitHub public repos", "value": "29" },
       { "label": "2nd-place winner", "value": "SarlaYash Creative Contest" }
     ]
   },
@@ -84,6 +84,9 @@
         { "name": "Flask", "level": "intermediate" },
         { "name": "SQLite", "level": "intermediate" },
         { "name": "Google Apps Script", "level": "intermediate" },
+        { "name": "Flutter", "level": "learning" },
+        { "name": "Dart", "level": "learning" },
+        { "name": "Docker", "level": "learning" },
         { "name": "Firebase", "level": "learning" }
       ]
     },
@@ -242,6 +245,70 @@
       },
       "highlights": [],
       "source": "github.json"
+    },
+    {
+      "id": "linkedin-automation",
+      "name": "LinkedIn Automation Suite",
+      "tagline": "Official-API LinkedIn posting with scheduling & AI content",
+      "description": "Python automation suite: OAuth integration with LinkedIn's official API (org-page posting, scheduling, analytics), a Playwright browser bot for human-like engagement, and a local-LLM/Ollama content generator. Ships with Docker Compose, PostgreSQL and Redis.",
+      "tech": ["Python", "FastAPI", "SQLAlchemy", "Playwright", "Docker", "Redis", "Ollama"],
+      "year": "2026",
+      "status": "complete",
+      "links": {
+        "repo": "https://github.com/ksathu07/linkedin-automation",
+        "demo": null,
+        "video": null
+      },
+      "highlights": ["Schedules posts via cron (APScheduler)", "Dockerized full stack (app + bot + generator)"],
+      "source": "projects/agents_linkedin-automation.json"
+    },
+    {
+      "id": "lifeos",
+      "name": "lifeOS — Career Twin",
+      "tagline": "Flutter career-twin app with growth predictions",
+      "description": "A Flutter 'career twin' app: human growth graph and prediction engine, skill graphs per profession, career-path ontology, opportunity matching (internships, hackathons, scholarships) and AI memory system — backed by datasets and research docs.",
+      "tech": ["Flutter", "Dart", "JSON ontologies"],
+      "year": "2026",
+      "status": "in-development",
+      "links": {
+        "repo": "https://github.com/ksathu07/lifeos",
+        "demo": null,
+        "video": null
+      },
+      "highlights": ["Growth-graph + prediction-engine architecture", "12 career paths with skill graphs and opportunities data"],
+      "source": "projects/lifeos.json"
+    },
+    {
+      "id": "ai-diagnosis-app",
+      "name": "AI Diagnosis App",
+      "tagline": "Healthcare diagnosis hackathon prototype",
+      "description": "A healthcare diagnosis hackathon prototype: NX + TypeScript monorepo with an OpenAPI spec, shared API client, artifact apps and a patient-facing mockup, plus backend packaged as a zip.",
+      "tech": ["TypeScript", "NX", "React", "OpenAPI"],
+      "year": "2026",
+      "status": "prototype",
+      "links": {
+        "repo": "https://github.com/ksathu07/ai-diagnosis-app",
+        "demo": null,
+        "video": null
+      },
+      "highlights": [],
+      "source": "projects/hackathon_ai-diagnosis-app.json"
+    },
+    {
+      "id": "live-portfolio",
+      "name": "Live Portfolio & CV Agent",
+      "tagline": "Data-driven portfolio + one-page CV pipeline",
+      "description": "CLARA: a Next.js portfolio generated entirely from a single verified profile.json, with snapshot scripts (GitHub, personal docs, project folders), validation, and per-role one-page CV builder (HTML + PDF).",
+      "tech": ["TypeScript", "React", "Next.js", "Tailwind CSS"],
+      "year": "2026",
+      "status": "complete",
+      "links": {
+        "repo": "https://github.com/ksathu07/live-portfolio",
+        "demo": null,
+        "video": null
+      },
+      "highlights": ["SSOT-driven: site never contradicts profile.json", "Role-specific CVs built from job descriptions"],
+      "source": "projects/agents_live-portfolio.json"
     }
   ],
   "achievements": [
@@ -354,6 +421,9 @@
       "projects/nexus-ai-hackathon_2_.json",
       "projects/project.json",
       "projects/hackathon_ai-diagnosis-app.json",
+      "projects/agents_linkedin-automation.json",
+      "projects/lifeos.json",
+      "projects/agents_live-portfolio.json",
       "https://github.com/ksathu07",
       "https://www.linkedin.com/in/sathursan-kamalanathan",
       "https://www.instagram.com/sk_sathursan_07/"

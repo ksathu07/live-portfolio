@@ -9,16 +9,19 @@
     "github_username": "ksathu07",
     "email": "ksathu.07@gmail.com"
   },
-  "sources": {
-    "personalFolder": "C:\\Personal Info\\sathursan",
-    "projectRoot": "C:\\Projects",
+"sources": {
+    "personalFolder": "D:\\Personal Info",
+    "projectRoot": "D:\\Projects",
     "linkedinExport": null,
     "instagramExport": null
   },
   "projectDirectories": [
     "nexus-ai-hackathon (2)",
     "project",
-    "Hackathon/AI-Diagnosis-app"
+    "Hackathon/AI-Diagnosis-app",
+    "Agents/linkedin-automation",
+    "lifeOS",
+    "Agents/Live-portfolio"
   ],
   "excludeProjectNames": [
     "Agents",
