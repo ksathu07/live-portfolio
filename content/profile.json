@@ -37,29 +37,29 @@
       "degree": "B.Tech",
       "field": "Computer Science & Engineering (AI & ML)",
       "startYear": "2025",
-      "endYear": "present",
+      "endYear": "2029",
       "details": ["First year"],
-      "source": "personal/docs/resume_sathursan.docx"
+      "source": "personal/myself/About Me.docx"
     },
     {
       "institution": "Adventist International School",
       "degree": "EDEXCEL International Advanced Levels (A-Levels)",
-      "startYear": null,
-      "endYear": null,
+      "startYear": "2025",
+      "endYear": "2025",
       "details": [
         "Mathematics A* · Further Mathematics A · Physics B · Accounting A"
       ],
-      "source": "personal/docs/resume_sathursan.docx"
+      "source": "personal/myself/About Me.docx"
     },
     {
       "institution": "Adventist International School",
       "degree": "EDEXCEL IGCSE (O-Levels)",
-      "startYear": null,
-      "endYear": null,
+      "startYear": "2023",
+      "endYear": "2023",
       "details": [
         "Mathematics 9 · Physics 9 · Biology 8 · Chemistry 8 · ICT 7 · English 6 · Commerce 5"
       ],
-      "source": "personal/docs/resume_sathursan.docx"
+      "source": "personal/myself/About Me.docx"
     }
   ],
   "skills": [
@@ -113,6 +113,14 @@
         { "name": "Event management", "level": null },
         { "name": "Team collaboration", "level": null },
         { "name": "Communication", "level": null }
+      ]
+    },
+    {
+      "category": "Spoken Languages",
+      "items": [
+        { "name": "Tamil", "level": "advanced" },
+        { "name": "English", "level": "advanced" },
+        { "name": "Sinhala", "level": "beginner" }
       ]
     }
   ],
@@ -328,22 +336,52 @@
   ],
   "achievements": [
     {
-      "title": "Highest School Score — Mathematics (IGCSE)",
-      "date": null,
-      "details": null,
-      "source": "personal/docs/resume_sathursan.docx"
+      "title": "Certificate of Excellence — Top Achiever in Mathematics (O/L 2023)",
+      "date": "2023",
+      "details": "Awarded for achieving the highest mathematics score in school — 184 out of 200.",
+      "source": "personal/myself/About Me.docx"
     },
     {
-      "title": "Best Academic Results — IAL",
-      "date": null,
+      "title": "Certificate of Excellence — Outstanding Performance in Mathematics (2024)",
+      "date": "2024",
       "details": null,
-      "source": "personal/docs/resume_sathursan.docx"
+      "source": "personal/myself/About Me.docx"
+    },
+    {
+      "title": "Certificate of Excellence — Outstanding Performance in Physics (2024)",
+      "date": "2024",
+      "details": null,
+      "source": "personal/myself/About Me.docx"
+    },
+    {
+      "title": "Certificate of Excellence — Outstanding Performance in Further Mathematics (2024)",
+      "date": "2024",
+      "details": null,
+      "source": "personal/myself/About Me.docx"
+    },
+    {
+      "title": "Certificate of Excellence — Top Achiever in Pure Mathematics U2 (A/S 2024)",
+      "date": "2024",
+      "details": "Awarded for achieving 100 out of 100 in Pure Mathematics Unit 2.",
+      "source": "personal/myself/About Me.docx"
+    },
+    {
+      "title": "Certificate of Excellence — Top Achiever in Pure Mathematics U4 (A/S 2024)",
+      "date": "2024",
+      "details": "Awarded for achieving 100 out of 100 in Pure Mathematics Unit 4.",
+      "source": "personal/myself/About Me.docx"
+    },
+    {
+      "title": "Certificate of Excellence — School Best Results (IAL 2025)",
+      "date": "2025",
+      "details": "Awarded for getting A*, 2A, B in the Edexcel IAL examination.",
+      "source": "personal/myself/About Me.docx"
     },
     {
       "title": "FIDE Blitz Chess Rating 1511",
       "date": null,
-      "details": null,
-      "source": "personal/docs/resume_sathursan.docx"
+      "details": "FIDE blitz rating 1511 — FIDE ID 29935717.",
+      "source": "personal/myself/About Me.docx"
     }
   ],
   "experience": [
@@ -358,7 +396,7 @@
         "Three-year tenure — led student teams and ran school events.",
         "Developed communication, coordination and people skills."
       ],
-      "source": "personal/docs/resume_sathursan.docx"
+      "source": "personal/myself/About Me.docx"
     },
     {
       "organization": "Adventist International School",
@@ -370,7 +408,7 @@
       "bullets": [
         "Led the school cricket team — team strategy, morale and on-pitch leadership."
       ],
-      "source": "personal/docs/resume_sathursan.docx"
+      "source": "personal/myself/About Me.docx"
     },
     {
       "organization": "SRM Ramapuram",
@@ -382,7 +420,19 @@
       "bullets": [
         "Produce campus event videos using Adobe tools and teammate collaboration."
       ],
-      "source": "personal/docs/resume_sathursan.docx"
+      "source": "personal/myself/About Me.docx"
+    },
+    {
+      "organization": "Adventist International School",
+      "role": "Peer Tutor — Junior Students",
+      "type": "volunteering",
+      "startDate": null,
+      "endDate": null,
+      "present": false,
+      "bullets": [
+        "Taught and assisted junior students during teacher absences and free time."
+      ],
+      "source": "personal/myself/About Me.docx"
     }
   ],
   "certifications": [
