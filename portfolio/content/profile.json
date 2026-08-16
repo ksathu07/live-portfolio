@@ -28,8 +28,7 @@
     "facts": [
       { "label": "B.Tech CSE · AI & ML", "value": "2025 – present" },
       { "label": "Hackathon projects built", "value": "10+" },
-      { "label": "GitHub public repos", "value": "29" },
-      { "label": "2nd-place winner", "value": "SarlaYash Creative Contest" }
+      { "label": "GitHub public repos", "value": "29" }
     ]
   },
   "education": [
@@ -329,18 +328,6 @@
   ],
   "achievements": [
     {
-      "title": "2nd Place — SarlaYash Creative Contest",
-      "date": "2025-10",
-      "details": "Judged on brand alignment and purposeful design. Created a minimalist visual based on the theme 'WILL comes before SKILL', embodying SarlaYash's philosophy.",
-      "source": "personal/docs/resume_sathursan.docx"
-    },
-    {
-      "title": "Trainee Intern — SarlaYash Learning Solutions LLP",
-      "date": "2025-11",
-      "details": "Selected for the inaugural 90-day pilot batch through a multi-stage process — recognized for creativity and initiative.",
-      "source": "personal/docs/resume_sathursan.docx"
-    },
-    {
       "title": "Highest School Score — Mathematics (IGCSE)",
       "date": null,
       "details": null,
@@ -360,19 +347,6 @@
     }
   ],
   "experience": [
-    {
-      "organization": "SarlaYash Learning Solutions LLP",
-      "role": "Trainee Intern",
-      "type": "internship",
-      "startDate": "2025-11",
-      "endDate": null,
-      "present": true,
-      "bullets": [
-        "Inaugural pilot cohort focused on experiential learning and real project contributions.",
-        "Creativity, alignment with company values and proactive initiative recognized during selection."
-      ],
-      "source": "personal/docs/resume_sathursan.docx"
-    },
     {
       "organization": "Adventist International School",
       "role": "Prefect",
