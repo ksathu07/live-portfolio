@@ -14,8 +14,8 @@
     },
     "external_directory": {
       "*": "deny",
-      "C:/Personal Info/sathursan/**": "allow",
-      "C:/Projects/**": "allow"
+      "D:/Personal Info/**": "allow",
+      "D:/Projects/**": "allow"
     }
   }
 }

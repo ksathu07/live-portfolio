@@ -69,8 +69,8 @@ function suggestCertificationsFromSnapshot(snapshot, proof) {
   const certs = []
   const proofList = Object.values(proof)
 
-  // Look in certificates subfolder for image/pdf files
-  const certSub = (snapshot.subfolders || []).find((s) => s.name === 'certificates')
+  // Look in certificates subfolder for image/pdf files (name may vary, e.g. "Course Certificates")
+  const certSub = (snapshot.subfolders || []).find((s) => s.name.toLowerCase().includes('certificate'))
   if (certSub && certSub.mediaCount > 0) {
     const certProofs = proofList.filter((p) => String(p.source).includes('certificates'))
     for (const p of certProofs) {
@@ -94,7 +94,7 @@ function suggestCertificationsFromSnapshot(snapshot, proof) {
 }
 
 function suggestVideoPortfolioFromSnapshot(snapshot, proof) {
-  const videoSub = (snapshot.subfolders || []).find((s) => s.name === 'video-proof')
+  const videoSub = (snapshot.subfolders || []).find((s) => s.name.toLowerCase().includes('video'))
   if (!videoSub) return null
 
   const proofList = Object.values(proof)
@@ -170,4 +170,9 @@ function main() {
   console.log(`  suggested certs: ${result.stats.certCount}, videos: ${result.stats.videoCount}`)
 }
 
-main().catch((e) => { console.error(e); process.exit(1) })
+try {
+  main()
+} catch (e) {
+  console.error(e)
+  process.exit(1)
+}

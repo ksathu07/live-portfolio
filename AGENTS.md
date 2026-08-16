@@ -49,6 +49,10 @@ Each subfolder has a purpose; CLARA scans them all during sync.
 | `portfolio-proof/` | Screenshots, PDFs, links of work | Images, `links.txt` |
 | `projects-proof/` | Per-project proof (screenshots, demos, recordings) | Nested by project name |
 
+The owner's current folder (`D:\Personal Info`) uses its own names — CLARA infers
+the spec from the folder name (e.g. anything containing "certificate" is treated
+like `certificates/`, "internship"/"myself"/"about" like `docs/`). No renaming needed.
+
 Each subfolder may contain a `links.txt` file with one URL per line (blank lines and
 lines starting with `#` are ignored). These become clickable proof links.
 

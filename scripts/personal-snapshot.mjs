@@ -15,6 +15,18 @@ const SUBFOLDERS = {
   'projects-proof': { types: ['mixed'], extractText: [] },
 }
 
+// Infer a spec from the subfolder name when it isn't an exact match
+// (owner's folders have no strict naming rules).
+function specForSubfolder(name) {
+  const exact = SUBFOLDERS[name]
+  if (exact) return exact
+  const lower = name.toLowerCase()
+  if (lower.includes('certificate')) return SUBFOLDERS.certificates
+  if (lower.includes('internship')) return SUBFOLDERS.docs
+  if (lower.includes('myself') || lower.includes('about')) return SUBFOLDERS.docs
+  return { types: ['mixed'], extractText: [] }
+}
+
 const MEDIA_EXTS = {
   image: ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg', 'bmp', 'avif'],
   video: ['mp4', 'mov', 'mkv', 'webm', 'avi'],
@@ -57,7 +69,7 @@ async function extractText(file, ext) {
 }
 
 async function scanSubfolder(name, absPath) {
-  const spec = SUBFOLDERS[name] || { types: ['mixed'], extractText: [] }
+  const spec = specForSubfolder(name) || { types: ['mixed'], extractText: [] }
   const entries = safeReaddir(absPath)
   const files = []
   const media = []
