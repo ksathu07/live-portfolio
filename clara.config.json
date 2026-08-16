@@ -21,7 +21,8 @@
     "Hackathon/AI-Diagnosis-app",
     "Agents/linkedin-automation",
     "lifeOS",
-    "Agents/Live-portfolio"
+    "Agents/Live-portfolio",
+    "song-guessing-game"
   ],
   "excludeProjectNames": [
     "Agents",

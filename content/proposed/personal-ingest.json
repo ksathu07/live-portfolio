@@ -1,0 +1,27 @@
+{
+  "snapshot": "D:\\Projects\\Agents\\Live-portfolio\\content\\snapshots\\personal\\index.json",
+  "generatedAt": "2026-08-16T13:44:46.538Z",
+  "personalDir": "D:\\Personal Info",
+  "proof": {
+    "myself_my_image_jpg": {
+      "id": "myself_my_image_jpg",
+      "kind": "image",
+      "path": "My Image.jpg.jpeg",
+      "source": "personal/myself",
+      "label": "My Image.jpg.jpeg"
+    }
+  },
+  "certifications": [],
+  "videoPortfolio": null,
+  "suggestedSections": {
+    "videoPortfolio": false,
+    "certifications": false
+  },
+  "stats": {
+    "proofCount": 1,
+    "mediaCount": 1,
+    "linkCount": 0,
+    "certCount": 0,
+    "videoCount": 0
+  }
+}

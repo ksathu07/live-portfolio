@@ -1,0 +1,107 @@
+{
+  "schema": "proposal/v1",
+  "title": "Switch personal source to D:\\Personal Info + add new projects",
+  "date": "2026-08-16",
+  "summary": "Owner moved personal info to D:\\Personal Info (old C:\\Personal Info\\sathursan is gone). Projects moved to D:\\Projects. Two new owner projects found (lifeOS, song-guessing-game). One new certificate found. GitHub public repos fact updated 14 -> 29.",
+  "changes": {
+    "profile.facts": [
+      {
+        "op": "replace",
+        "path": "profile.facts[2]",
+        "old": { "label": "GitHub public repos", "value": "14" },
+        "new": { "label": "GitHub public repos", "value": "29" },
+        "source": "github.json -> profile.publicRepos = 29"
+      }
+    ],
+    "projects.add": [
+      {
+        "id": "lifeos",
+        "name": "lifeOS (twingraph_ai)",
+        "tagline": "AI career-guidance & growth platform",
+        "description": "Flutter app with an AI memory system, prediction and recommendation engines, skill graphs, career paths and an ontology layer — plus a student-placement prediction dataset and evaluation data.",
+        "tech": ["Dart", "Flutter", "Python", "AI/ML"],
+        "year": "2026",
+        "status": "in-development",
+        "links": {
+          "repo": "https://github.com/ksathu07/lifeos",
+          "demo": null,
+          "video": null
+        },
+        "highlights": [],
+        "source": "github.json + local lifeOS folder"
+      },
+      {
+        "id": "song-guessing-game",
+        "name": "Song Guessing Game",
+        "tagline": "Browser music-guessing game with a Node server",
+        "description": "A web-based song guessing game — HTML/CSS/JS front end, Node.js server, testable game logic and a future-features folder.",
+        "tech": ["JavaScript", "HTML", "CSS", "Node.js"],
+        "year": "2026",
+        "status": "in-development",
+        "links": {
+          "repo": "https://github.com/ksathu07/song-guessing-game",
+          "demo": null,
+          "video": null
+        },
+        "highlights": [],
+        "source": "github.json + local song-guessing-game folder"
+      }
+    ],
+    "certifications.add": [
+      {
+        "title": "Python for Beginners",
+        "issuer": null,
+        "date": null,
+        "year": null,
+        "proof": { "id": "course_certificates_python_for_beginners_e_certificate", "kind": "document" },
+        "source": "personal/Course Certificates/Python_for_Beginners_E-Certificate.pdf"
+      }
+    ],
+    "proof.add": {
+      "course_certificates_python_for_beginners_e_certificate": {
+        "id": "course_certificates_python_for_beginners_e_certificate",
+        "kind": "document",
+        "path": "Course Certificates/Python_for_Beginners_E-Certificate.pdf",
+        "source": "personal/Course Certificates",
+        "label": "Python for Beginners E-Certificate"
+      },
+      "myself_my_image_jpg": {
+        "id": "myself_my_image_jpg",
+        "kind": "image",
+        "path": "myself/My Image.jpg.jpeg",
+        "source": "personal/myself",
+        "label": "Profile photo"
+      }
+    },
+    "meta.update": {
+      "sources.personalRoot": "D:\\Personal Info",
+      "sourceFiles.add": [
+        "projects/lifeos.json",
+        "projects/song-guessing-game.json"
+      ],
+      "sourceFiles.remove": [
+        "personal/docs/resume_sathursan.docx"
+      ]
+    }
+  },
+  "unsure": [
+    "Python for Beginners certificate: issuer and date unknown — the PDF is image-based with no text layer (filename is the only readable fact).",
+    "About Me.pdf could not be read (image-based PDF) — no new personal facts extracted from the new folder.",
+    "lifeOS description is inferred from folder structure (AI_MEMORY_SYSTEM.md, PREDICTION_ENGINE.md, RECOMMENDATION_ENGINE.md, skill_graphs/, career_paths/, ontology/, datasets/) + GitHub language stats — not owner-confirmed.",
+    "Existing SSOT facts sourced from personal/docs/resume_sathursan.docx remain in place (previously verified), but that file no longer exists in the new folder — re-verify later if desired."
+  ],
+  "configChanges": {
+    "clara.config.json": [
+      "sources.personalFolder -> D:\\Personal Info",
+      "sources.projectRoot -> D:\\Projects",
+      "projectDirectories += lifeOS, song-guessing-game"
+    ],
+    "opencode.json": [
+      "external_directory: D:/Personal Info/** allow, D:/Projects/** allow (old C: paths removed)"
+    ],
+    "scripts": [
+      "personal-snapshot.mjs: infer subfolder spec from name (certificate/internship/myself keywords)",
+      "personal-ingest.mjs: fixed main().catch crash; cert/video subfolder lookup now keyword-based"
+    ]
+  }
+}

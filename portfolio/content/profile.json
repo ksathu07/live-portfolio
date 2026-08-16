@@ -309,6 +309,22 @@
       },
       "highlights": ["SSOT-driven: site never contradicts profile.json", "Role-specific CVs built from job descriptions"],
       "source": "projects/agents_live-portfolio.json"
+    },
+    {
+      "id": "song-guessing-game",
+      "name": "Song Guessing Game",
+      "tagline": "Browser music-guessing game with a Node server",
+      "description": "A web-based song guessing game — HTML/CSS/JS front end, Node.js server, testable game logic and a future-features folder.",
+      "tech": ["JavaScript", "HTML", "CSS", "Node.js"],
+      "year": "2026",
+      "status": "in-development",
+      "links": {
+        "repo": "https://github.com/ksathu07/song-guessing-game",
+        "demo": null,
+        "video": null
+      },
+      "highlights": [],
+      "source": "projects/song-guessing-game.json"
     }
   ],
   "achievements": [
@@ -395,7 +411,16 @@
       "source": "personal/docs/resume_sathursan.docx"
     }
   ],
-  "certifications": [],
+  "certifications": [
+    {
+      "title": "Python for Beginners",
+      "issuer": null,
+      "date": null,
+      "year": null,
+      "proof": { "id": "course_certificates_python_for_beginners_e_certificate", "kind": "document" },
+      "source": "personal/Course Certificates/Python_for_Beginners_E-Certificate.pdf"
+    }
+  ],
   "videoPortfolio": {
     "headline": "Video Editing & Motion Design",
     "summary": "Selected edits and motion design work from campus events and personal projects.",
@@ -409,27 +434,42 @@
     "Cricket & chess",
     "Workshops and events"
   ],
-  "proof": {},
+  "proof": {
+    "course_certificates_python_for_beginners_e_certificate": {
+      "id": "course_certificates_python_for_beginners_e_certificate",
+      "kind": "document",
+      "path": "Course Certificates/Python_for_Beginners_E-Certificate.pdf",
+      "source": "personal/Course Certificates",
+      "label": "Python for Beginners E-Certificate"
+    },
+    "myself_my_image_jpg": {
+      "id": "myself_my_image_jpg",
+      "kind": "image",
+      "path": "myself/My Image.jpg.jpeg",
+      "source": "personal/myself",
+      "label": "Profile photo"
+    }
+  },
   "meta": {
     "appVersion": 2,
     "approvedAt": null,
-    "lastIngestedAt": null,
+    "lastIngestedAt": "2026-08-16",
     "sourceFiles": [
       "github.json",
       "personal/index.json",
-      "personal/docs/resume_sathursan.docx",
       "projects/nexus-ai-hackathon_2_.json",
       "projects/project.json",
       "projects/hackathon_ai-diagnosis-app.json",
       "projects/agents_linkedin-automation.json",
       "projects/lifeos.json",
       "projects/agents_live-portfolio.json",
+      "projects/song-guessing-game.json",
       "https://github.com/ksathu07",
       "https://www.linkedin.com/in/sathursan-kamalanathan",
       "https://www.instagram.com/sk_sathursan_07/"
     ],
     "sources": {
-      "personalRoot": "C:\\Personal Info\\sathursan",
+      "personalRoot": "D:\\Personal Info",
       "subfolders": []
     }
   }
