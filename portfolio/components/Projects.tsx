@@ -287,7 +287,7 @@ export default function Projects() {
               <ScrollStack
                 itemDistance={110}
                 itemScale={0.025}
-                itemStackDistance={16}
+                itemStackDistance={72}
                 stackPosition={76}
                 scaleEndPosition={48}
                 blurAmount={1.5}
