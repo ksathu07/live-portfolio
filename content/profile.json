@@ -266,7 +266,7 @@
       "status": "complete",
       "links": {
         "repo": "https://github.com/ksathu07/AI-Fake-News-Credibility-Analyzer",
-        "demo": null,
+        "demo": "https://fake-news-static.vercel.app",
         "video": null
       },
       "highlights": [],
@@ -416,7 +416,7 @@
       "status": "in-development",
       "links": {
         "repo": "https://github.com/ksathu07/linkedin-automation",
-        "demo": null,
+        "demo": "https://linkedin-demo-static.vercel.app",
         "video": null
       },
       "highlights": [
