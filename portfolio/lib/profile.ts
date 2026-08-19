@@ -54,6 +54,7 @@ export interface Project {
   tech: string[];
   year?: string | null;
   status?: "prototype" | "in-development" | "complete" | null;
+  featured?: boolean;
   links?: { repo?: string | null; demo?: string | null; video?: string | null };
   highlights?: string[];
   source?: string;

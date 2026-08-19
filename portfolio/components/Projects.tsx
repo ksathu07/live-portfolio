@@ -9,6 +9,17 @@ import { useEffect, useState, useRef, type MouseEvent } from "react";
 // next section.
 const FEATURED_COUNT = 5;
 
+// Importance ranking — purely data-driven (status weight + tech count + year).
+// Nothing hardcoded: complete > in-development > prototype, more tech = bigger.
+const STATUS_WEIGHT: Record<string, number> = { complete: 3, "in-development": 2, prototype: 1 };
+
+function importance(p: (typeof projects)[number]): number {
+  const status = STATUS_WEIGHT[p.status ?? "prototype"] ?? 1;
+  const tech = p.tech?.length ?? 0;
+  const year = parseInt(p.year ?? "0", 10) || 0;
+  return status * 1000 + tech * 10 + year;
+}
+
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -234,8 +245,12 @@ function CompactCard({ project, index }: { project: (typeof projects)[number]; i
 
 export default function Projects() {
   const isMobile = useIsMobile();
-  const featured = projects.slice(0, FEATURED_COUNT);
-  const rest = projects.slice(FEATURED_COUNT);
+  const ranked = [...projects].sort((a, b) => importance(b) - importance(a));
+  // Explicitly featured projects (SSOT order) ARE the stack — the owner curates
+  // it directly. Only when nothing is flagged do we fall back to ranking.
+  const flagged = projects.filter((p) => p.featured);
+  const featured = flagged.length > 0 ? flagged.slice(0, FEATURED_COUNT) : ranked.slice(0, FEATURED_COUNT);
+  const rest = ranked.filter((p) => !featured.includes(p));
 
   return (
     <section id="projects" className="relative mx-auto max-w-6xl px-6 py-28">
@@ -262,7 +277,7 @@ export default function Projects() {
         {isMobile ? (
           /* Mobile: no stack — cards are too tall to pile within a half viewport */
           <div className="mt-12 grid gap-5">
-            {projects.map((p, i) => (
+            {ranked.map((p, i) => (
               <CompactCard key={p.id} project={p} index={i} />
             ))}
           </div>

@@ -26,9 +26,18 @@
     },
     "extraLinks": [],
     "facts": [
-      { "label": "B.Tech CSE · AI & ML", "value": "2025 – present" },
-      { "label": "Hackathon projects built", "value": "10+" },
-      { "label": "GitHub public repos", "value": "29" }
+      {
+        "label": "B.Tech CSE · AI & ML",
+        "value": "2025 – present"
+      },
+      {
+        "label": "Hackathon projects built",
+        "value": "10+"
+      },
+      {
+        "label": "GitHub public repos",
+        "value": "29"
+      }
     ]
   },
   "education": [
@@ -38,7 +47,9 @@
       "field": "Computer Science & Engineering (AI & ML)",
       "startYear": "2025",
       "endYear": "2029",
-      "details": ["First year"],
+      "details": [
+        "First year"
+      ],
       "source": "personal/myself/About Me.docx"
     },
     {
@@ -66,61 +77,151 @@
     {
       "category": "Languages",
       "items": [
-        { "name": "Python", "level": "intermediate" },
-        { "name": "C", "level": "beginner" },
-        { "name": "TypeScript", "level": "intermediate" },
-        { "name": "JavaScript", "level": "intermediate" },
-        { "name": "HTML / CSS", "level": "intermediate" }
+        {
+          "name": "Python",
+          "level": "intermediate"
+        },
+        {
+          "name": "C",
+          "level": "beginner"
+        },
+        {
+          "name": "TypeScript",
+          "level": "intermediate"
+        },
+        {
+          "name": "JavaScript",
+          "level": "intermediate"
+        },
+        {
+          "name": "HTML / CSS",
+          "level": "intermediate"
+        }
       ]
     },
     {
       "category": "Frameworks & Tools",
       "items": [
-        { "name": "React", "level": "intermediate" },
-        { "name": "Next.js", "level": "intermediate" },
-        { "name": "Vite", "level": "intermediate" },
-        { "name": "Tailwind CSS", "level": "intermediate" },
-        { "name": "Flask", "level": "intermediate" },
-        { "name": "SQLite", "level": "intermediate" },
-        { "name": "Google Apps Script", "level": "intermediate" },
-        { "name": "Flutter", "level": "learning" },
-        { "name": "Dart", "level": "learning" },
-        { "name": "Docker", "level": "learning" },
-        { "name": "Firebase", "level": "learning" }
+        {
+          "name": "React",
+          "level": "intermediate"
+        },
+        {
+          "name": "Next.js",
+          "level": "intermediate"
+        },
+        {
+          "name": "Vite",
+          "level": "intermediate"
+        },
+        {
+          "name": "Tailwind CSS",
+          "level": "intermediate"
+        },
+        {
+          "name": "Flask",
+          "level": "intermediate"
+        },
+        {
+          "name": "SQLite",
+          "level": "intermediate"
+        },
+        {
+          "name": "Google Apps Script",
+          "level": "intermediate"
+        },
+        {
+          "name": "Flutter",
+          "level": "learning"
+        },
+        {
+          "name": "Dart",
+          "level": "learning"
+        },
+        {
+          "name": "Docker",
+          "level": "learning"
+        },
+        {
+          "name": "Firebase",
+          "level": "learning"
+        }
       ]
     },
     {
       "category": "AI / ML",
       "items": [
-        { "name": "Machine Learning fundamentals", "level": "learning" },
-        { "name": "Fine-tuning (RoBERTa)", "level": "learning" },
-        { "name": "AI agents & workflows", "level": "learning" }
+        {
+          "name": "Machine Learning fundamentals",
+          "level": "learning"
+        },
+        {
+          "name": "Fine-tuning (RoBERTa)",
+          "level": "learning"
+        },
+        {
+          "name": "AI agents & workflows",
+          "level": "learning"
+        }
       ]
     },
     {
       "category": "Creative",
       "items": [
-        { "name": "Adobe Photoshop", "level": "intermediate" },
-        { "name": "Adobe Premiere Pro", "level": "intermediate" },
-        { "name": "Adobe After Effects", "level": "beginner" },
-        { "name": "Video editing", "level": "intermediate" }
+        {
+          "name": "Adobe Photoshop",
+          "level": "intermediate"
+        },
+        {
+          "name": "Adobe Premiere Pro",
+          "level": "intermediate"
+        },
+        {
+          "name": "Adobe After Effects",
+          "level": "beginner"
+        },
+        {
+          "name": "Video editing",
+          "level": "intermediate"
+        }
       ]
     },
     {
       "category": "Professional",
       "items": [
-        { "name": "Research & content preparation", "level": null },
-        { "name": "Event management", "level": null },
-        { "name": "Team collaboration", "level": null },
-        { "name": "Communication", "level": null }
+        {
+          "name": "Research & content preparation",
+          "level": null
+        },
+        {
+          "name": "Event management",
+          "level": null
+        },
+        {
+          "name": "Team collaboration",
+          "level": null
+        },
+        {
+          "name": "Communication",
+          "level": null
+        }
       ]
     },
     {
       "category": "Spoken Languages",
       "items": [
-        { "name": "Tamil", "level": "advanced" },
-        { "name": "English", "level": "advanced" },
-        { "name": "Sinhala", "level": "beginner" }
+        {
+          "name": "Tamil",
+          "level": "advanced"
+        },
+        {
+          "name": "English",
+          "level": "advanced"
+        },
+        {
+          "name": "Sinhala",
+          "level": "beginner"
+        }
       ]
     }
   ],
@@ -130,7 +231,15 @@
       "name": "IndiaFlow (Nexus-AI)",
       "tagline": "Patient-owned lifetime healthcare ecosystem",
       "description": "A 40-screen national healthcare intelligence prototype: consent-based patient-owned records, an AI layer (risk prediction, medication safety, emergency triage, multi-agent orchestration), security & privacy governance, and rural offline support. Built for a Smart India internal hackathon.",
-      "tech": ["TypeScript", "React 19", "Vite", "Tailwind CSS", "Express", "Firebase Firestore", "PWA"],
+      "tech": [
+        "TypeScript",
+        "React 19",
+        "Vite",
+        "Tailwind CSS",
+        "Express",
+        "Firebase Firestore",
+        "PWA"
+      ],
       "year": "2026",
       "status": "prototype",
       "links": {
@@ -139,14 +248,20 @@
         "video": null
       },
       "highlights": [],
-      "source": "github.json + local nexus-ai-hackathon folder"
+      "source": "github.json + local nexus-ai-hackathon folder",
+      "featured": true
     },
     {
       "id": "fake-news-analyzer",
       "name": "AI Fake-News Credibility Analyzer",
-      "tagline": "Fine-tuned RoBERTa news classifier",
-      "description": "Full pipeline to detect fake news credibility: dataset generation, model fine-tuning (RoBERTa), inference API and a scoring front-end — built in Python.",
-      "tech": ["Python", "scikit-learn", "RoBERTa", "Flask"],
+      "tagline": "RoBERTa + lightweight ML credibility analyzer",
+      "description": "Streamlit app that scores article credibility: RoBERTa fine-tuned classifier with an automatic lightweight fallback (TF-IDF + Logistic Regression), clickbait detection, emotional intensity and source-reputation scoring. Runs out of the box; fine-tuning script included.",
+      "tech": [
+        "Python",
+        "scikit-learn",
+        "RoBERTa",
+        "Flask"
+      ],
       "year": "2026",
       "status": "complete",
       "links": {
@@ -155,16 +270,23 @@
         "video": null
       },
       "highlights": [],
-      "source": "github.json + local 'project' folder"
+      "source": "github.json + local 'project' folder",
+      "featured": true
     },
     {
       "id": "swapt-tracker",
       "name": "Smart Workforce Attendance Tracker",
       "tagline": "Live-hackathon productivity app",
       "description": "Live hackathon-built app to log punches and tasks, with a 'Today's Attendance & Tasks' dashboard — Flask + SQLite, built and shipped in a single session.",
-      "tech": ["Python", "Flask", "SQLite", "HTML", "JavaScript"],
+      "tech": [
+        "Python",
+        "Flask",
+        "SQLite",
+        "HTML",
+        "JavaScript"
+      ],
       "year": "2025",
-      "status": "complete",
+      "status": "in-development",
       "links": {
         "repo": "https://github.com/ksathu07/swapt-hackathon",
         "demo": null,
@@ -178,9 +300,15 @@
       "name": "Employee Mood Thermometer",
       "tagline": "Anonymised stress & burnout detection for teams",
       "description": "Full-stack web app where employees log their daily mood and HR gets anonymized dashboards to spot stress and burnout early — React-style clean dashboard UI.",
-      "tech": ["Python", "Flask", "HTML", "CSS", "SQLite"],
+      "tech": [
+        "Python",
+        "Flask",
+        "HTML",
+        "CSS",
+        "SQLite"
+      ],
       "year": "2025",
-      "status": "complete",
+      "status": "in-development",
       "links": {
         "repo": "https://github.com/ksathu07/employee-mood-thermometer",
         "demo": null,
@@ -194,7 +322,11 @@
       "name": "Google-Sheets User Manager",
       "tagline": "A real CRUD app where a Sheet is the database",
       "description": "A minimal full-flow CRUD app: HTML form → Google Apps Script backend → Google Sheet as database → back to UI. Used to teach the entire request→persist→render path.",
-      "tech": ["HTML", "JavaScript", "Google Apps Script"],
+      "tech": [
+        "HTML",
+        "JavaScript",
+        "Google Apps Script"
+      ],
       "year": "2025",
       "status": "complete",
       "links": {
@@ -210,7 +342,11 @@
       "name": "Zero-to-Infinity Full-Stack Series",
       "tagline": "100-days-of-code, production-grade front-end skills",
       "description": "A growing series of advanced full-stack builds — starting with a smart profile UI system with light/dark theme, sessionStorage persistence and real-time DOM updates.",
-      "tech": ["HTML", "CSS", "JavaScript"],
+      "tech": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
       "year": "2026",
       "status": "in-development",
       "links": {
@@ -226,7 +362,11 @@
       "name": "Mini Enterprise Lead Management System",
       "tagline": "Structured lead capture for SaaS teams",
       "description": "A clean HTML/JS lead-capture form with structured flow — built during the SarlaYash full-stack project hackathon.",
-      "tech": ["HTML", "JavaScript", "CSS"],
+      "tech": [
+        "HTML",
+        "JavaScript",
+        "CSS"
+      ],
       "year": "2025",
       "status": "complete",
       "links": {
@@ -235,14 +375,19 @@
         "video": null
       },
       "highlights": [],
-      "source": "github.json"
+      "source": "github.json",
+      "featured": true
     },
     {
       "id": "jarvis-orion",
       "name": "JARVIS-Orion Assistant",
       "tagline": "Personal AI assistant & automation",
       "description": "A desktop first assistant built in Python, mixing plug-in modules (chat, automation, system tools, installer) — my companion project.",
-      "tech": ["Python", "API integration", "Desktop tools"],
+      "tech": [
+        "Python",
+        "API integration",
+        "Desktop tools"
+      ],
       "year": "2026",
       "status": "in-development",
       "links": {
@@ -258,7 +403,15 @@
       "name": "LinkedIn Automation Suite",
       "tagline": "Official-API LinkedIn posting with scheduling & AI content",
       "description": "Python automation suite: OAuth integration with LinkedIn's official API (org-page posting, scheduling, analytics), a Playwright browser bot for human-like engagement, and a local-LLM/Ollama content generator. Ships with Docker Compose, PostgreSQL and Redis.",
-      "tech": ["Python", "FastAPI", "SQLAlchemy", "Playwright", "Docker", "Redis", "Ollama"],
+      "tech": [
+        "Python",
+        "FastAPI",
+        "SQLAlchemy",
+        "Playwright",
+        "Docker",
+        "Redis",
+        "Ollama"
+      ],
       "year": "2026",
       "status": "complete",
       "links": {
@@ -266,15 +419,23 @@
         "demo": null,
         "video": null
       },
-      "highlights": ["Schedules posts via cron (APScheduler)", "Dockerized full stack (app + bot + generator)"],
-      "source": "projects/agents_linkedin-automation.json"
+      "highlights": [
+        "Schedules posts via cron (APScheduler)",
+        "Dockerized full stack (app + bot + generator)"
+      ],
+      "source": "projects/agents_linkedin-automation.json",
+      "featured": true
     },
     {
       "id": "lifeos",
       "name": "lifeOS — Career Twin",
       "tagline": "Flutter career-twin app with growth predictions",
       "description": "A Flutter 'career twin' app: human growth graph and prediction engine, skill graphs per profession, career-path ontology, opportunity matching (internships, hackathons, scholarships) and AI memory system — backed by datasets and research docs.",
-      "tech": ["Flutter", "Dart", "JSON ontologies"],
+      "tech": [
+        "Flutter",
+        "Dart",
+        "JSON ontologies"
+      ],
       "year": "2026",
       "status": "in-development",
       "links": {
@@ -282,7 +443,10 @@
         "demo": null,
         "video": null
       },
-      "highlights": ["Growth-graph + prediction-engine architecture", "12 career paths with skill graphs and opportunities data"],
+      "highlights": [
+        "Growth-graph + prediction-engine architecture",
+        "12 career paths with skill graphs and opportunities data"
+      ],
       "source": "projects/lifeos.json"
     },
     {
@@ -290,7 +454,12 @@
       "name": "AI Diagnosis App",
       "tagline": "Healthcare diagnosis hackathon prototype",
       "description": "A healthcare diagnosis hackathon prototype: NX + TypeScript monorepo with an OpenAPI spec, shared API client, artifact apps and a patient-facing mockup, plus backend packaged as a zip.",
-      "tech": ["TypeScript", "NX", "React", "OpenAPI"],
+      "tech": [
+        "TypeScript",
+        "NX",
+        "React",
+        "OpenAPI"
+      ],
       "year": "2026",
       "status": "prototype",
       "links": {
@@ -306,7 +475,12 @@
       "name": "Live Portfolio & CV Agent",
       "tagline": "Data-driven portfolio + one-page CV pipeline",
       "description": "CLARA: a Next.js portfolio generated entirely from a single verified profile.json, with snapshot scripts (GitHub, personal docs, project folders), validation, and per-role one-page CV builder (HTML + PDF).",
-      "tech": ["TypeScript", "React", "Next.js", "Tailwind CSS"],
+      "tech": [
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Tailwind CSS"
+      ],
       "year": "2026",
       "status": "complete",
       "links": {
@@ -314,15 +488,24 @@
         "demo": null,
         "video": null
       },
-      "highlights": ["SSOT-driven: site never contradicts profile.json", "Role-specific CVs built from job descriptions"],
-      "source": "projects/agents_live-portfolio.json"
+      "highlights": [
+        "SSOT-driven: site never contradicts profile.json",
+        "Role-specific CVs built from job descriptions"
+      ],
+      "source": "projects/agents_live-portfolio.json",
+      "featured": true
     },
     {
       "id": "song-guessing-game",
       "name": "Song Guessing Game",
       "tagline": "Browser music-guessing game with a Node server",
       "description": "A web-based song guessing game — HTML/CSS/JS front end, Node.js server, testable game logic and a future-features folder.",
-      "tech": ["JavaScript", "HTML", "CSS", "Node.js"],
+      "tech": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Node.js"
+      ],
       "year": "2026",
       "status": "in-development",
       "links": {
@@ -330,7 +513,7 @@
         "demo": null,
         "video": null
       },
-"highlights": [],
+      "highlights": [],
       "source": "projects/song-guessing-game.json"
     }
   ],
@@ -441,7 +624,10 @@
       "issuer": null,
       "date": null,
       "year": null,
-      "proof": { "id": "course_certificates_python_for_beginners_e_certificate", "kind": "document" },
+      "proof": {
+        "id": "course_certificates_python_for_beginners_e_certificate",
+        "kind": "document"
+      },
       "source": "personal/Course Certificates/Python_for_Beginners_E-Certificate.pdf"
     }
   ],

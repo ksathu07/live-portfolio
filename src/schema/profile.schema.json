@@ -108,6 +108,7 @@
           "tech": { "type": "array", "items": { "type": "string" } },
           "year": { "type": ["string", "null"], "pattern": "^\\d{4}$" },
           "status": { "type": ["string", "null"], "enum": ["prototype", "in-development", "complete", null] },
+          "featured": { "type": "boolean", "description": "Explicitly pin this project into the featured stack regardless of ranking." },
           "links": { "type": "object", "properties": {
             "repo": { "type": ["string", "null"], "format": "uri" },
             "demo": { "type": ["string", "null"], "format": "uri" },
