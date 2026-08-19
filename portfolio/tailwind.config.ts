@@ -6,14 +6,26 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          950: "#07070c",
-          900: "#0b0b14",
-          800: "#12121e",
+          950: "#050505",
+          900: "#0a0a08",
+          800: "#121210",
+        },
+        gold: {
+          100: "#F7E7C4",
+          200: "#E8D08A",
+          300: "#DDBB5F",
+          400: "#D4AF37",
+          500: "#B8912B",
+          600: "#8C6D4F",
+          700: "#6B5330",
+          800: "#543B1A",
+          900: "#3A2A12",
         },
         accent: {
-          400: "#22d3ee",
-          500: "#8b5cf6",
-          600: "#d946ef",
+          DEFAULT: "#D4AF37",
+          400: "#D4AF37",
+          500: "#B8912B",
+          600: "#8C6D4F",
         },
       },
       fontFamily: {
@@ -119,8 +131,8 @@ const config: Config = {
           "50%": { transform: "rotate(3deg)" },
         },
         glowPulse: {
-          "0%,100%": { boxShadow: "0 0 20px rgba(139, 92, 246, 0.3)" },
-          "50%": { boxShadow: "0 0 40px rgba(139, 92, 246, 0.6)" },
+          "0%,100%": { boxShadow: "0 0 20px rgba(212, 175, 55, 0.3)" },
+          "50%": { boxShadow: "0 0 40px rgba(212, 175, 55, 0.6)" },
         },
         slideUp: {
           "0%": { transform: "translateY(100%)" },

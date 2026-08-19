@@ -4,9 +4,9 @@ import { profile } from "@/lib/profile";
 
 const LEVEL_DOT: Record<string, string> = {
   beginner: "bg-zinc-400",
-  learning: "bg-cyan-400",
-  intermediate: "bg-violet-400",
-  advanced: "bg-fuchsia-400",
+  learning: "bg-gold-300",
+  intermediate: "bg-gold-400",
+  advanced: "bg-gold-500",
 };
 
 // Asymmetric bento spans (7/5 rhythm like the cinematic reference).
@@ -26,7 +26,7 @@ export default function Skills() {
 
   return (
     <section id="skills" className="relative mx-auto max-w-6xl px-6 py-28">
-      <div className="pointer-events-none absolute left-0 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
+      <div className="pointer-events-none absolute left-0 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-gold-400/10 blur-[120px]" />
 
       <div className="relative">
         <p className="section-label">Skills</p>
@@ -38,12 +38,12 @@ export default function Skills() {
           {categories.map((cat, i) => (
             <div
               key={cat.category}
-              className={`glass rounded-2xl p-7 transition-all duration-500 hover:-translate-y-2 hover:border-violet-400/30 hover:shadow-[0_20px_60px_-15px_rgba(139,92,246,0.25)] ${SPANS[i % SPANS.length]}`}
+              className={`glass rounded-2xl p-7 transition-all duration-500 hover:-translate-y-2 hover:border-gold-400/30 hover:shadow-[0_20px_60px_-15px_rgba(212,175,55,0.25)] ${SPANS[i % SPANS.length]}`}
             >
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
-                  <div className="h-2 w-2 rounded-full bg-gradient-to-r from-cyan-400 to-violet-400 animate-pulse" />
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-violet-300">
+                  <div className="h-2 w-2 rounded-full bg-gradient-to-r from-gold-300 to-gold-400 animate-pulse" />
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gold-300">
                     {cat.category}
                   </h3>
                 </div>
@@ -56,10 +56,10 @@ export default function Skills() {
                 {cat.items.map((item) => (
                   <span
                     key={item.name}
-                    className="inline-flex items-center gap-2 rounded-lg bg-white/5 px-3 py-1.5 text-sm text-zinc-300 transition-all duration-300 hover:bg-violet-500/10 hover:text-white"
+                    className="inline-flex items-center gap-2 rounded-lg bg-white/5 px-3 py-1.5 text-sm text-zinc-300 transition-all duration-300 hover:bg-gold-500/10 hover:text-white"
                   >
                     <span
-                      className={`h-1.5 w-1.5 rounded-full ${LEVEL_DOT[item.level ?? ""] ?? "bg-violet-400"}`}
+                      className={`h-1.5 w-1.5 rounded-full ${LEVEL_DOT[item.level ?? ""] ?? "bg-gold-400"}`}
                     />
                     {item.name}
                   </span>

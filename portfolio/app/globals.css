@@ -13,22 +13,27 @@ html {
 body {
   @apply bg-ink-950 text-zinc-200 font-body antialiased;
   background-image:
-    radial-gradient(1100px 600px at 12% -8%, rgba(139, 92, 246, 0.18), transparent 60%),
-    radial-gradient(1000px 600px at 95% 10%, rgba(217, 70, 239, 0.12), transparent 55%),
-    radial-gradient(900px 700px at 50% 110%, rgba(34, 211, 238, 0.1), transparent 60%);
+    radial-gradient(1100px 600px at 12% -8%, rgba(212, 175, 55, 0.12), transparent 60%),
+    radial-gradient(1000px 600px at 95% 10%, rgba(247, 231, 196, 0.06), transparent 55%),
+    radial-gradient(900px 700px at 50% 110%, rgba(140, 109, 79, 0.12), transparent 60%);
   background-attachment: fixed;
 }
 
-/* Animated gradient text */
+/* Cinematic condensed display type */
+.font-display {
+  letter-spacing: 0.03em;
+}
+
+/* Animated gradient text (gold) */
 .text-gradient {
-  @apply bg-gradient-to-r from-cyan-300 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-gold-200 via-gold-400 to-gold-600 bg-clip-text text-transparent;
   background-size: 200% auto;
   animation: gradientShift 6s ease infinite;
 }
 
 /* Shimmer effect for highlights */
 .text-shimmer {
-  @apply bg-gradient-to-r from-cyan-300 via-white to-fuchsia-400 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-gold-200 via-white to-gold-500 bg-clip-text text-transparent;
   background-size: 200% auto;
   animation: shimmer 2.5s linear infinite;
 }
@@ -44,12 +49,12 @@ body {
 
 /* Section label with animated dot */
 .section-label {
-  @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-violet-300/90;
+  @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-gold-300/90;
 }
 
 .section-label::before {
   content: "";
-  @apply h-1.5 w-1.5 rounded-full bg-violet-400;
+  @apply h-1.5 w-1.5 rounded-full bg-gold-400;
   animation: pulseSlow 2s ease-in-out infinite;
 }
 
@@ -59,9 +64,9 @@ body {
 }
 
 .card-hover:hover {
-  @apply -translate-y-2 border-violet-400/40 bg-white/[0.06];
-  box-shadow: 0 25px 60px -15px rgba(139, 92, 246, 0.35),
-              0 0 40px -10px rgba(34, 211, 238, 0.2);
+  @apply -translate-y-2 border-gold-400/40 bg-white/[0.06];
+  box-shadow: 0 25px 60px -15px rgba(212, 175, 55, 0.3),
+              0 0 40px -10px rgba(247, 231, 196, 0.15);
 }
 
 /* Status pill with glow on hover */
@@ -70,8 +75,8 @@ body {
 }
 
 .status-pill:hover {
-  @apply border-violet-400/50 text-white;
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  @apply border-gold-400/50 text-white;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
 }
 
 /* Animated border gradient */
@@ -86,7 +91,7 @@ body {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, #22d3ee, #8b5cf6, #d946ef, #22d3ee);
+  background: linear-gradient(135deg, #F7E7C4, #D4AF37, #8C6D4F, #F7E7C4);
   background-size: 300% 300%;
   animation: borderFlow 3s linear infinite;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -98,8 +103,8 @@ body {
 
 /* Glow ring */
 .glow-ring {
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3),
-              0 0 60px rgba(139, 92, 246, 0.1);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3),
+              0 0 60px rgba(212, 175, 55, 0.1);
 }
 
 /* Animated underline */
@@ -114,7 +119,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #22d3ee, #8b5cf6);
+  background: linear-gradient(90deg, #D4AF37, #8C6D4F);
   transition: width 0.4s ease-out;
 }
 
@@ -139,21 +144,21 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #07070c;
+  background: #070705;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #8b5cf6, #d946ef);
+  background: linear-gradient(180deg, #D4AF37, #8C6D4F);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #a78bfa, #e879f9);
+  background: linear-gradient(180deg, #E8D08A, #B8912B);
 }
 
 /* Selection */
 ::selection {
-  background: rgba(139, 92, 246, 0.4);
+  background: rgba(212, 175, 55, 0.4);
   color: #fff;
 }
 
@@ -207,8 +212,8 @@ html.lenis, html.lenis body { height: auto; }
   width: 6px;
   height: 6px;
   border-radius: 9999px;
-  background: #a78bfa;
-  box-shadow: 0 0 12px rgba(167, 139, 250, 0.8);
+  background: #D4AF37;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.8);
   pointer-events: none;
 }
 
@@ -220,7 +225,7 @@ html.lenis, html.lenis body { height: auto; }
   width: 36px;
   height: 36px;
   border-radius: 9999px;
-  border: 1.5px solid rgba(139, 92, 246, 0.5);
+  border: 1.5px solid rgba(212, 175, 55, 0.5);
   pointer-events: none;
 }
 

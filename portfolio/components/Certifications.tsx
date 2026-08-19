@@ -34,15 +34,15 @@ function CertCard({ cert, index }: { cert: (typeof certifications)[number]; inde
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-        <div className="absolute inset-0 rounded-2xl border border-transparent bg-gradient-to-r from-emerald-500/30 via-cyan-500/30 to-violet-500/30" />
+        <div className="absolute inset-0 rounded-2xl border border-transparent bg-gradient-to-r from-gold-500/30 via-gold-400/30 to-gold-600/30" />
       </div>
 
       <div className="relative glass flex items-center gap-5 rounded-2xl p-5 transition-all duration-300 group-hover:bg-white/[0.06] group-hover:translate-x-1">
         <div className="relative shrink-0">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-cyan-300 text-lg shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-gold-400 to-gold-200 text-lg shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
             🎓
           </div>
-          <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-emerald-400 to-cyan-300 opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-300" />
+          <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-gold-400 to-gold-200 opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-300" />
         </div>
 
         <div className="flex-1 min-w-0">
@@ -61,7 +61,7 @@ function CertCard({ cert, index }: { cert: (typeof certifications)[number]; inde
             href={proofHref}
             target="_blank"
             rel="noreferrer"
-            className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-400 group-hover:border-emerald-400/30 group-hover:text-emerald-300 transition-all"
+            className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-400 group-hover:border-gold-400/30 group-hover:text-gold-300 transition-all"
           >
             View certificate ↗
           </a>
@@ -78,7 +78,7 @@ export default function Certifications() {
 
   return (
     <section id="certifications" className="relative mx-auto max-w-6xl px-6 py-28">
-      <div className="pointer-events-none absolute right-1/4 top-0 h-[250px] w-[250px] rounded-full bg-emerald-500/10 blur-[100px]" />
+      <div className="pointer-events-none absolute right-1/4 top-0 h-[250px] w-[250px] rounded-full bg-gold-500/10 blur-[100px]" />
 
       <div className="relative">
         <p className="section-label">Certifications</p>

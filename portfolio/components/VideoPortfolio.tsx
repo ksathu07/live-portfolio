@@ -30,9 +30,9 @@ export function VideoPortfolioSection({ data }: VideoPortfolioProps) {
   return (
     <section id="video-portfolio" className="px-6 py-20 max-w-6xl mx-auto">
       <div className="mb-10">
-        <h2 className="text-3xl font-bold text-ink">{data.headline ?? "Video Portfolio"}</h2>
+        <h2 className="text-3xl font-bold text-white">{data.headline ?? "Video Portfolio"}</h2>
         {data.summary && (
-          <p className="text-ink/70 mt-3 max-w-2xl">{data.summary}</p>
+          <p className="text-white/70 mt-3 max-w-2xl">{data.summary}</p>
         )}
       </div>
 
@@ -42,7 +42,7 @@ export function VideoPortfolioSection({ data }: VideoPortfolioProps) {
           return (
             <div
               key={`${item.title}-${idx}`}
-              className="group rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden hover:border-accent/50 transition-colors"
+              className="group rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden hover:border-gold-400/50 transition-colors"
             >
               <div className="aspect-video bg-black/40 flex items-center justify-center relative overflow-hidden">
                 {embedUrl ? (
@@ -54,7 +54,7 @@ export function VideoPortfolioSection({ data }: VideoPortfolioProps) {
                     title={item.title}
                   />
                 ) : (
-                  <div className="text-ink/40 text-sm text-center px-6">
+                  <div className="text-white/40 text-sm text-center px-6">
                     {item.proof?.path ? (
                       <span>Video: {item.proof.path}</span>
                     ) : (
@@ -64,19 +64,19 @@ export function VideoPortfolioSection({ data }: VideoPortfolioProps) {
                 )}
               </div>
               <div className="p-5">
-                <h3 className="font-semibold text-ink">{item.title}</h3>
+                <h3 className="font-semibold text-white">{item.title}</h3>
                 {item.role && (
-                  <p className="text-xs text-accent mt-1 uppercase tracking-wide">{item.role}</p>
+                  <p className="text-xs text-gold-300 mt-1 uppercase tracking-wide">{item.role}</p>
                 )}
                 {item.description && (
-                  <p className="text-ink/70 text-sm mt-2">{item.description}</p>
+                  <p className="text-white/70 text-sm mt-2">{item.description}</p>
                 )}
                 {item.tools && item.tools.length > 0 && (
                   <div className="flex flex-wrap gap-1.5 mt-3">
                     {item.tools.map((tool) => (
                       <span
                         key={tool}
-                        className="px-2 py-0.5 rounded-full bg-accent/10 text-accent text-[11px] font-medium"
+                        className="px-2 py-0.5 rounded-full bg-gold-400/10 text-gold-300 text-[11px] font-medium"
                       >
                         {tool}
                       </span>
@@ -88,7 +88,7 @@ export function VideoPortfolioSection({ data }: VideoPortfolioProps) {
                     href={item.links.watch}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-block mt-3 text-xs text-accent hover:underline"
+                    className="inline-block mt-3 text-xs text-gold-300 hover:underline"
                   >
                     Watch →
                   </a>

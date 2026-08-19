@@ -21,8 +21,8 @@ export interface ScrollStackProps {
   itemDistance?: number;
   itemScale?: number;
   itemStackDistance?: number;
-  stackPosition?: string;
-  scaleEndPosition?: string;
+  stackPosition?: string | number;
+  scaleEndPosition?: string | number;
   baseScale?: number;
   rotationAmount?: number;
   blurAmount?: number;
@@ -206,12 +206,27 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     lenis?.on("scroll", handleScroll);
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", measure);
+
+    // Fonts/images shift layout after mount — re-measure once they settle so
+    // card positions never go stale (stale positions caused drifting/overlap).
+    const reflow = () => {
+      measure();
+      updateCardTransforms();
+    };
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(reflow).catch(() => {});
+    }
+    window.addEventListener("load", reflow);
+    const reflowTimeout = window.setTimeout(reflow, 1500);
+
     updateCardTransforms();
 
     return () => {
       lenis?.off("scroll", handleScroll);
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", measure);
+      window.removeEventListener("load", reflow);
+      window.clearTimeout(reflowTimeout);
       stackCompletedRef.current = false;
       cardsRef.current = [];
       initialTopsRef.current = [];

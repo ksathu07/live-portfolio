@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Bebas_Neue, Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 
-const display = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" });
+const display = Bebas_Neue({ subsets: ["latin"], weight: "400", variable: "--font-display" });
 const body = Inter({ subsets: ["latin"], variable: "--font-body" });
 
 import profile from "../content/profile.json";

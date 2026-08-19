@@ -7,8 +7,8 @@ const BADGE_COLORS = [
   "from-amber-400 to-yellow-300",
   "from-zinc-300 to-zinc-100",
   "from-orange-400 to-amber-300",
-  "from-violet-400 to-fuchsia-300",
-  "from-cyan-400 to-blue-300",
+  "from-gold-400 to-gold-200",
+  "from-gold-300 to-gold-100",
 ];
 
 function AchievementCard({ ach, index }: { ach: (typeof profile.achievements)[number]; index: number }) {
@@ -39,7 +39,7 @@ function AchievementCard({ ach, index }: { ach: (typeof profile.achievements)[nu
     >
       {/* Animated gradient border on hover */}
       <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-        <div className="absolute inset-0 rounded-2xl border border-transparent bg-gradient-to-r from-violet-500/30 via-cyan-500/30 to-fuchsia-500/30" />
+        <div className="absolute inset-0 rounded-2xl border border-transparent bg-gradient-to-r from-gold-500/30 via-gold-400/30 to-gold-500/30" />
       </div>
 
       <div className="relative glass flex items-center gap-5 rounded-2xl p-5 transition-all duration-300 group-hover:bg-white/[0.06] group-hover:translate-x-1">
@@ -63,7 +63,7 @@ function AchievementCard({ ach, index }: { ach: (typeof profile.achievements)[nu
         </div>
 
         {ach.date && (
-          <span className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-400 group-hover:border-violet-400/30 group-hover:text-violet-300 transition-all">
+          <span className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-400 group-hover:border-gold-400/30 group-hover:text-gold-300 transition-all">
             {ach.date}
           </span>
         )}

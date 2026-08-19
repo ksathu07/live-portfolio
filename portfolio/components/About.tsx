@@ -73,7 +73,7 @@ export default function About() {
   const spotlightBg = useTransform(
     [spotlightX, spotlightY],
     ([x, y]) =>
-      `radial-gradient(circle 260px at ${x}px ${y}px, rgba(139,92,246,0.22), rgba(34,211,238,0.1), transparent 80%)`
+      `radial-gradient(circle 260px at ${x}px ${y}px, rgba(212,175,55,0.22), rgba(247,231,196,0.1), transparent 80%)`
   );
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
@@ -93,7 +93,7 @@ export default function About() {
   return (
     <section id="about" className="relative mx-auto max-w-6xl px-6 py-28">
       {/* Background accent */}
-      <div className="pointer-events-none absolute right-0 top-1/2 h-[300px] w-[300px] -translate-y-1/2 rounded-full bg-violet-600/10 blur-[100px]" />
+      <div className="pointer-events-none absolute right-0 top-1/2 h-[300px] w-[300px] -translate-y-1/2 rounded-full bg-gold-600/10 blur-[100px]" />
 
       <div className="relative">
         <p className="section-label">About</p>
@@ -145,7 +145,7 @@ export default function About() {
               {stats.map((stat, i) => (
                 <div
                   key={stat.label}
-                  className="glass group rounded-2xl p-5 transition-all duration-500 hover:-translate-y-1 hover:border-violet-400/30 hover:bg-white/[0.06]"
+                  className="glass group rounded-2xl p-5 transition-all duration-500 hover:-translate-y-1 hover:border-gold-400/30 hover:bg-white/[0.06]"
                   style={{ animationDelay: `${i * 100}ms` }}
                 >
                   <p className="font-display text-3xl font-bold text-white group-hover:text-gradient transition-all duration-300">

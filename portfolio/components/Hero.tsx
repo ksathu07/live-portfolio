@@ -27,7 +27,7 @@ const fadeUp: Variants = {
 function Particle({ delay, x, y, size }: { delay: number; x: number; y: number; size: number }) {
   return (
     <div
-      className="absolute rounded-full bg-violet-400/30 animate-particle-float"
+      className="absolute rounded-full bg-gold-400/30 animate-particle-float"
       style={{
         left: `${x}%`,
         top: `${y}%`,
@@ -71,10 +71,10 @@ export default function Hero() {
   return (
     <section id="top" className="relative flex min-h-screen items-center overflow-hidden pt-24">
       {/* Animated gradient orbs */}
-      <div className="pointer-events-none absolute -left-32 top-10 h-[500px] w-[500px] rounded-full bg-violet-600/20 blur-[100px] animate-pulse-glow" />
-      <div className="pointer-events-none absolute right-0 top-40 h-[400px] w-[400px] rounded-full bg-cyan-500/15 blur-[100px] animate-float-slow [animation-delay:2s]" />
-      <div className="pointer-events-none absolute bottom-0 left-1/2 h-[300px] w-[60rem] -translate-x-1/2 rounded-full bg-fuchsia-600/10 blur-[100px] animate-pulse-slow" />
-      <div className="pointer-events-none absolute left-1/3 top-1/4 h-[200px] w-[200px] rounded-full bg-cyan-400/10 blur-[80px] animate-float-reverse" />
+      <div className="pointer-events-none absolute -left-32 top-10 h-[500px] w-[500px] rounded-full bg-gold-600/20 blur-[100px] animate-pulse-glow" />
+      <div className="pointer-events-none absolute right-0 top-40 h-[400px] w-[400px] rounded-full bg-gold-400/15 blur-[100px] animate-float-slow [animation-delay:2s]" />
+      <div className="pointer-events-none absolute bottom-0 left-1/2 h-[300px] w-[60rem] -translate-x-1/2 rounded-full bg-gold-600/10 blur-[100px] animate-pulse-slow" />
+      <div className="pointer-events-none absolute left-1/3 top-1/4 h-[200px] w-[200px] rounded-full bg-gold-300/10 blur-[80px] animate-float-reverse" />
 
       {/* Floating particles */}
       {particles.map((pt, i) => (
@@ -101,7 +101,7 @@ export default function Hero() {
           {avatarProof && (
             <motion.div variants={fadeUp} initial="hidden" animate="visible" className="shrink-0">
               <div className="relative">
-                <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-cyan-400 via-violet-500 to-fuchsia-500 opacity-70 blur-md animate-pulse-glow" />
+                <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-gold-300 via-gold-500 to-gold-500 opacity-70 blur-md animate-pulse-glow" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={`/proof/${avatarProof.path}`}
@@ -119,8 +119,8 @@ export default function Hero() {
               className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs tracking-wide text-zinc-300 backdrop-blur-sm"
             >
               <span className="relative flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold-400 opacity-75" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-gold-400" />
               </span>
               {p.headline}
             </motion.div>
@@ -166,8 +166,8 @@ export default function Hero() {
               {facts.map((f) => (
                 <span key={f} className="flex items-center gap-2.5 group">
                   <span className="relative h-2 w-2">
-                    <span className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-fuchsia-500 animate-pulse" />
-                    <span className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-fuchsia-500 blur-sm opacity-60" />
+                    <span className="absolute inset-0 rounded-full bg-gradient-to-r from-gold-300 to-gold-500 animate-pulse" />
+                    <span className="absolute inset-0 rounded-full bg-gradient-to-r from-gold-300 to-gold-500 blur-sm opacity-60" />
                   </span>
                   <span className="transition-colors duration-300 group-hover:text-zinc-200">{f}</span>
                 </span>
@@ -182,7 +182,7 @@ export default function Hero() {
         <div className="flex flex-col items-center gap-2 text-zinc-500">
           <span className="text-xs tracking-widest uppercase">Scroll</span>
           <div className="relative h-8 w-5 rounded-full border border-zinc-600 p-1">
-            <div className="h-1.5 w-1 rounded-full bg-violet-400 animate-bounce mx-auto" />
+            <div className="h-1.5 w-1 rounded-full bg-gold-400 animate-bounce mx-auto" />
           </div>
         </div>
       </div>

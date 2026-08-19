@@ -14,14 +14,14 @@ export default function Contact() {
 
   return (
     <section id="contact" className="relative mx-auto max-w-6xl px-6 py-28">
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-600/15 blur-[120px]" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold-600/15 blur-[120px]" />
 
       <div className="relative">
         <div className="glass relative overflow-hidden rounded-3xl p-10 sm:p-14">
           {/* Animated gradient orbs */}
-          <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-violet-600/25 blur-3xl animate-pulse-glow" />
-          <div className="pointer-events-none absolute -left-20 -bottom-20 h-60 w-60 rounded-full bg-cyan-500/20 blur-3xl animate-float-slow" />
-          <div className="pointer-events-none absolute right-1/4 top-1/3 h-40 w-40 rounded-full bg-fuchsia-600/15 blur-3xl animate-pulse-slow" />
+          <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-gold-600/25 blur-3xl animate-pulse-glow" />
+          <div className="pointer-events-none absolute -left-20 -bottom-20 h-60 w-60 rounded-full bg-gold-400/20 blur-3xl animate-float-slow" />
+          <div className="pointer-events-none absolute right-1/4 top-1/3 h-40 w-40 rounded-full bg-gold-600/15 blur-3xl animate-pulse-slow" />
 
           <div className="relative">
             <p className="section-label">Contact</p>
@@ -40,14 +40,14 @@ export default function Contact() {
                   href={r.href}
                   target={r.href.startsWith("http") ? "_blank" : undefined}
                   rel={r.href.startsWith("http") ? "noreferrer" : undefined}
-                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 transition-all duration-500 hover:-translate-y-1 hover:border-violet-400/40 hover:bg-white/[0.08] hover:shadow-[0_20px_60px_-15px_rgba(139,92,246,0.3)]"
+                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 transition-all duration-500 hover:-translate-y-1 hover:border-gold-400/40 hover:bg-white/[0.08] hover:shadow-[0_20px_60px_-15px_rgba(212,175,55,0.3)]"
                   style={{ animationDelay: `${i * 80}ms` }}
                 >
                   {/* Hover glow */}
-                  <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-violet-500/5 to-cyan-500/5" />
+                  <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-gold-500/5 to-gold-300/5" />
 
                   <div className="relative flex items-center gap-4">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-500/20 text-violet-300 group-hover:bg-violet-500/30 group-hover:scale-110 transition-all duration-300">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gold-500/20 text-gold-300 group-hover:bg-gold-500/30 group-hover:scale-110 transition-all duration-300">
                       {r.icon}
                     </span>
                     <div className="min-w-0">
