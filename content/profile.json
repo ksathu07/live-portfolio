@@ -260,7 +260,7 @@
         "Python",
         "scikit-learn",
         "RoBERTa",
-        "Flask"
+        "Streamlit"
       ],
       "year": "2026",
       "status": "complete",
