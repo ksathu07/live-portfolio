@@ -244,7 +244,7 @@
       "status": "prototype",
       "links": {
         "repo": "https://github.com/ksathu07/Nexus-ai-hackathon",
-        "demo": null,
+        "demo": "https://nexus-ai-demo-eight.vercel.app",
         "video": null
       },
       "highlights": [],
@@ -371,7 +371,7 @@
       "status": "complete",
       "links": {
         "repo": "https://github.com/ksathu07/mini-enterprise-lead-management-system",
-        "demo": null,
+        "demo": "https://mini-enterprise-demo.vercel.app",
         "video": null
       },
       "highlights": [],
@@ -485,7 +485,7 @@
       "status": "in-development",
       "links": {
         "repo": "https://github.com/ksathu07/live-portfolio",
-        "demo": null,
+        "demo": "https://live-portfolio-delta-murex.vercel.app",
         "video": null
       },
       "highlights": [
