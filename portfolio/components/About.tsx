@@ -1,7 +1,8 @@
 "use client";
 
 import { profile } from "@/lib/profile";
-import { useEffect, useRef, useState } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 
 const p = profile.profile;
 
@@ -59,6 +60,36 @@ export default function About() {
     { value: 2, label: "Internships", suffix: "" },
   ];
 
+  // 3D tilt + spotlight (ported from the cinematic reference)
+  const cardRef = useRef<HTMLDivElement>(null);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const spotlightX = useMotionValue(200);
+  const spotlightY = useMotionValue(200);
+
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [10, -10]), { damping: 18, stiffness: 220 });
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-10, 10]), { damping: 18, stiffness: 220 });
+
+  const spotlightBg = useTransform(
+    [spotlightX, spotlightY],
+    ([x, y]) =>
+      `radial-gradient(circle 260px at ${x}px ${y}px, rgba(139,92,246,0.22), rgba(34,211,238,0.1), transparent 80%)`
+  );
+
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    mouseX.set((e.clientX - rect.left) / rect.width - 0.5);
+    mouseY.set((e.clientY - rect.top) / rect.height - 0.5);
+    spotlightX.set(e.clientX - rect.left);
+    spotlightY.set(e.clientY - rect.top);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
+
   return (
     <section id="about" className="relative mx-auto max-w-6xl px-6 py-28">
       {/* Background accent */}
@@ -98,23 +129,35 @@ export default function About() {
             </div>
           </div>
 
-          {/* Animated stats grid */}
-          <div className="grid grid-cols-2 gap-4 lg:col-span-2">
-            {stats.map((stat, i) => (
-              <div
-                key={stat.label}
-                className="glass group rounded-2xl p-5 transition-all duration-500 hover:-translate-y-1 hover:border-violet-400/30 hover:bg-white/[0.06]"
-                style={{ animationDelay: `${i * 100}ms` }}
-              >
-                <p className="font-display text-3xl font-bold text-white group-hover:text-gradient transition-all duration-300">
-                  <AnimatedCounter target={stat.value} suffix={stat.suffix} />
-                </p>
-                <p className="mt-1.5 text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
+          {/* Animated stats grid — 3D tilt card with cursor spotlight */}
+          <motion.div
+            ref={cardRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            className="relative lg:col-span-2"
+            style={{ rotateX, rotateY, transformStyle: "preserve-3d", transformPerspective: 800 }}
+          >
+            <motion.div
+              className="pointer-events-none absolute inset-0 rounded-3xl"
+              style={{ background: spotlightBg }}
+            />
+            <div className="grid grid-cols-2 gap-4">
+              {stats.map((stat, i) => (
+                <div
+                  key={stat.label}
+                  className="glass group rounded-2xl p-5 transition-all duration-500 hover:-translate-y-1 hover:border-violet-400/30 hover:bg-white/[0.06]"
+                  style={{ animationDelay: `${i * 100}ms` }}
+                >
+                  <p className="font-display text-3xl font-bold text-white group-hover:text-gradient transition-all duration-300">
+                    <AnimatedCounter target={stat.value} suffix={stat.suffix} />
+                  </p>
+                  <p className="mt-1.5 text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

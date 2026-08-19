@@ -157,7 +157,74 @@ body {
   color: #fff;
 }
 
-/* Reduced motion */
+/* ============ Lenis smooth scroll ============ */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* ============ Scroll stack (cinematic card pile-up) ============ */
+.scroll-stack-scroller {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.scroll-stack-inner {
+  position: relative;
+  width: 100%;
+  padding-top: 4vh;
+  padding-bottom: 50vh; /* runway so all cards stack and lock at the top */
+}
+
+.scroll-stack-card {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  transform-origin: top center;
+  will-change: transform, filter;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.scroll-stack-end {
+  width: 100%;
+  height: 1px;
+}
+
+/* ============ Custom cursor ============ */
+@media (pointer: fine) {
+  body, a, button, [data-cursor] { cursor: none; }
+}
+
+.cursor-dot {
+  position: fixed;
+  top: -3px;
+  left: -3px;
+  z-index: 10000;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: #a78bfa;
+  box-shadow: 0 0 12px rgba(167, 139, 250, 0.8);
+  pointer-events: none;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: -18px;
+  left: -18px;
+  z-index: 9999;
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(139, 92, 246, 0.5);
+  pointer-events: none;
+}
+
+/* ============ Reduced motion ============ */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {

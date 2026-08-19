@@ -1,62 +1,24 @@
 "use client";
 
 import { profile } from "@/lib/profile";
-import { useEffect, useRef, useState } from "react";
 
-const LEVEL_WIDTH: Record<string, number> = {
-  beginner: 30,
-  learning: 45,
-  intermediate: 65,
-  advanced: 85,
+const LEVEL_DOT: Record<string, string> = {
+  beginner: "bg-zinc-400",
+  learning: "bg-cyan-400",
+  intermediate: "bg-violet-400",
+  advanced: "bg-fuchsia-400",
 };
 
-const LEVEL_COLOR: Record<string, string> = {
-  beginner: "from-zinc-500 to-zinc-400",
-  learning: "from-cyan-400 to-cyan-300",
-  intermediate: "from-violet-500 to-violet-400",
-  advanced: "from-fuchsia-500 to-fuchsia-400",
-};
+// Asymmetric bento spans (7/5 rhythm like the cinematic reference).
+const SPANS = ["lg:col-span-7", "lg:col-span-5", "lg:col-span-5", "lg:col-span-7"];
 
-function SkillBar({ name, level, delay }: { name: string; level?: string | null; delay: number }) {
-  const width = level ? LEVEL_WIDTH[level] ?? 50 : 50;
-  const color = level ? LEVEL_COLOR[level] ?? "from-violet-500 to-violet-400" : "from-violet-500 to-violet-400";
-  const [animated, setAnimated] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => setAnimated(true), delay);
-          io.disconnect();
-        }
-      },
-      { threshold: 0.3 }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, [delay]);
-
-  return (
-    <div ref={ref} className="group">
-      <div className="flex items-center justify-between mb-1.5">
-        <span className="text-sm text-zinc-300 group-hover:text-white transition-colors">{name}</span>
-        {level && (
-          <span className="text-xs text-zinc-500 capitalize opacity-0 group-hover:opacity-100 transition-opacity">
-            {level}
-          </span>
-        )}
-      </div>
-      <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
-        <div
-          className={`h-full rounded-full bg-gradient-to-r ${color} transition-all duration-1000 ease-out`}
-          style={{ width: animated ? `${width}%` : "0%" }}
-        />
-      </div>
-    </div>
-  );
+// Badge derived purely from the data — no invented claims.
+function deriveBadge(items: { level?: string | null }[]): string {
+  const levels = items.map((i) => i.level).filter(Boolean) as string[];
+  if (!levels.length) return "SKILLS";
+  if (levels.every((l) => l === "advanced")) return "ADVANCED";
+  if (levels.some((l) => l === "advanced")) return "MIXED";
+  return "FOUNDATION";
 }
 
 export default function Skills() {
@@ -72,28 +34,41 @@ export default function Skills() {
           Tools of the <span className="text-gradient">trade</span>
         </h2>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 lg:grid-cols-12">
           {categories.map((cat, i) => (
             <div
               key={cat.category}
-              className="glass rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-violet-400/30 hover:shadow-[0_20px_60px_-15px_rgba(139,92,246,0.25)]"
-              style={{ animationDelay: `${i * 80}ms` }}
+              className={`glass rounded-2xl p-7 transition-all duration-500 hover:-translate-y-2 hover:border-violet-400/30 hover:shadow-[0_20px_60px_-15px_rgba(139,92,246,0.25)] ${SPANS[i % SPANS.length]}`}
             >
-              <div className="flex items-center gap-3 mb-5">
-                <div className="h-2 w-2 rounded-full bg-gradient-to-r from-cyan-400 to-violet-400 animate-pulse" />
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-violet-300">
-                  {cat.category}
-                </h3>
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="h-2 w-2 rounded-full bg-gradient-to-r from-cyan-400 to-violet-400 animate-pulse" />
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-violet-300">
+                    {cat.category}
+                  </h3>
+                </div>
+                <span className="shrink-0 rounded-full border border-white/10 px-2.5 py-0.5 text-[10px] tracking-widest text-zinc-400">
+                  {deriveBadge(cat.items)}
+                </span>
               </div>
-              <div className="space-y-3.5">
-                {cat.items.map((item, j) => (
-                  <SkillBar
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {cat.items.map((item) => (
+                  <span
                     key={item.name}
-                    name={item.name}
-                    level={item.level}
-                    delay={i * 100 + j * 60}
-                  />
+                    className="inline-flex items-center gap-2 rounded-lg bg-white/5 px-3 py-1.5 text-sm text-zinc-300 transition-all duration-300 hover:bg-violet-500/10 hover:text-white"
+                  >
+                    <span
+                      className={`h-1.5 w-1.5 rounded-full ${LEVEL_DOT[item.level ?? ""] ?? "bg-violet-400"}`}
+                    />
+                    {item.name}
+                  </span>
                 ))}
+              </div>
+
+              <div className="mt-6 flex items-end justify-between border-t border-white/10 pt-4">
+                <span className="font-display text-2xl font-bold text-white">{cat.items.length}</span>
+                <span className="text-[10px] uppercase tracking-widest text-zinc-500">tools</span>
               </div>
             </div>
           ))}

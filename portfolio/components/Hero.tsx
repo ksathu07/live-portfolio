@@ -1,12 +1,28 @@
 "use client";
 
 import { profile, proof } from "@/lib/profile";
-import { useEffect, useState } from "react";
+import { motion, type Variants } from "framer-motion";
 
 const p = profile.profile;
 
 // First image-kind proof record (e.g. a profile photo) — fully data-driven.
 const avatarProof = Object.values(proof).find((r) => r.kind === "image" && r.path);
+
+// Cinematic staggered blur-fade-up entrance (ported from the reference repo).
+const container: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } },
+};
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 26, filter: "blur(8px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] },
+  },
+};
 
 function Particle({ delay, x, y, size }: { delay: number; x: number; y: number; size: number }) {
   return (
@@ -24,12 +40,6 @@ function Particle({ delay, x, y, size }: { delay: number; x: number; y: number; 
 }
 
 export default function Hero() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   // Facts come from the SSOT (profile.facts); fall back to computed ones if empty.
   const ssotFacts = p.facts ?? [];
   const facts = ssotFacts.length
@@ -53,6 +63,11 @@ export default function Hero() {
     { delay: 0.7, x: 85, y: 35, size: 4 },
   ];
 
+  const initials = p.name
+    .split(" ")
+    .map((w) => w[0])
+    .join("");
+
   return (
     <section id="top" className="relative flex min-h-screen items-center overflow-hidden pt-24">
       {/* Animated gradient orbs */}
@@ -75,13 +90,16 @@ export default function Hero() {
         }}
       />
 
+      {/* Watermark emblem (cinematic touch) */}
+      <div className="pointer-events-none absolute -right-6 top-1/2 -translate-y-1/2 select-none font-display text-[20rem] font-bold leading-none text-white/[0.025] sm:text-[26rem]">
+        {initials}
+      </div>
+
       <div className="relative mx-auto w-full max-w-6xl px-6">
         <div className="flex flex-col items-start gap-10 lg:flex-row lg:items-center">
           {/* Avatar photo (from proof map, if any) */}
           {avatarProof && (
-            <div
-              className={`shrink-0 transition-all duration-1000 delay-100 ${mounted ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"}`}
-            >
+            <motion.div variants={fadeUp} initial="hidden" animate="visible" className="shrink-0">
               <div className="relative">
                 <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-cyan-400 via-violet-500 to-fuchsia-500 opacity-70 blur-md animate-pulse-glow" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -91,94 +109,71 @@ export default function Hero() {
                   className="relative h-40 w-40 rounded-full border-2 border-white/20 object-cover sm:h-48 sm:w-48 lg:h-56 lg:w-56"
                 />
               </div>
-            </div>
+            </motion.div>
           )}
 
-        <div className="max-w-3xl">
-          {/* Status badge */}
-          <div
-            className={`mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs tracking-wide text-zinc-300 backdrop-blur-sm transition-all duration-1000 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
-          >
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
-            </span>
-            {p.headline}
-          </div>
-
-          {/* Main heading with staggered animation */}
-          <h1
-            className={`font-display text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl transition-all duration-1000 delay-200 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-          >
-            <span className="inline-block animate-fade-in-left">{p.name.split(" ")[0]}</span>{" "}
-            <span className="inline-block text-gradient animate-fade-in-right [animation-delay:0.3s]">
-              {p.name.split(" ").slice(1).join(" ")}
-            </span>
-          </h1>
-
-          {/* Tagline with typewriter-like reveal */}
-          <p
-            className={`mt-6 max-w-2xl text-xl leading-relaxed text-zinc-400 transition-all duration-1000 delay-500 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
-          >
-            {p.tagline}
-          </p>
-
-          {/* CTA buttons */}
-          <div
-            className={`mt-8 flex flex-wrap gap-3 transition-all duration-1000 delay-700 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
-          >
-            {p.links?.github && (
-              <a
-                href={p.links.github}
-                target="_blank"
-                rel="noreferrer"
-                className="status-pill group"
-              >
-                <span>GitHub</span>
-                <span className="transition-transform duration-300 group-hover:translate-x-0.5">↗</span>
-              </a>
-            )}
-            {p.links?.linkedin && (
-              <a
-                href={p.links.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="status-pill group"
-              >
-                <span>LinkedIn</span>
-                <span className="transition-transform duration-300 group-hover:translate-x-0.5">↗</span>
-              </a>
-            )}
-            {p.email && (
-              <a
-                href={`mailto:${p.email}`}
-                className="status-pill group"
-              >
-                <span>Email me</span>
-                <span className="transition-transform duration-300 group-hover:translate-x-0.5">→</span>
-              </a>
-            )}
-          </div>
-
-          {/* Facts row */}
-          <div
-            className={`mt-10 flex flex-wrap gap-8 text-sm text-zinc-400 transition-all duration-1000 delay-[900ms] ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
-          >
-            {facts.map((f, i) => (
-              <span
-                key={f}
-                className="flex items-center gap-2.5 group"
-                style={{ animationDelay: `${1 + i * 0.15}s` }}
-              >
-                <span className="relative h-2 w-2">
-                  <span className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-fuchsia-500 animate-pulse" />
-                  <span className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-fuchsia-500 blur-sm opacity-60" />
-                </span>
-                <span className="transition-colors duration-300 group-hover:text-zinc-200">{f}</span>
+          <motion.div variants={container} initial="hidden" animate="visible" className="max-w-3xl">
+            {/* Status badge */}
+            <motion.div
+              variants={fadeUp}
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs tracking-wide text-zinc-300 backdrop-blur-sm"
+            >
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
               </span>
-            ))}
-          </div>
-        </div>
+              {p.headline}
+            </motion.div>
+
+            {/* Main heading */}
+            <motion.h1
+              variants={fadeUp}
+              className="font-display text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl"
+            >
+              {p.name.split(" ")[0]}{" "}
+              <span className="text-gradient">{p.name.split(" ").slice(1).join(" ")}</span>
+            </motion.h1>
+
+            {/* Tagline */}
+            <motion.p variants={fadeUp} className="mt-6 max-w-2xl text-xl leading-relaxed text-zinc-400">
+              {p.tagline}
+            </motion.p>
+
+            {/* CTA buttons */}
+            <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3">
+              {p.links?.github && (
+                <a href={p.links.github} target="_blank" rel="noreferrer" className="status-pill group">
+                  <span>GitHub</span>
+                  <span className="transition-transform duration-300 group-hover:translate-x-0.5">↗</span>
+                </a>
+              )}
+              {p.links?.linkedin && (
+                <a href={p.links.linkedin} target="_blank" rel="noreferrer" className="status-pill group">
+                  <span>LinkedIn</span>
+                  <span className="transition-transform duration-300 group-hover:translate-x-0.5">↗</span>
+                </a>
+              )}
+              {p.email && (
+                <a href={`mailto:${p.email}`} className="status-pill group">
+                  <span>Email me</span>
+                  <span className="transition-transform duration-300 group-hover:translate-x-0.5">→</span>
+                </a>
+              )}
+            </motion.div>
+
+            {/* Facts row */}
+            <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-8 text-sm text-zinc-400">
+              {facts.map((f) => (
+                <span key={f} className="flex items-center gap-2.5 group">
+                  <span className="relative h-2 w-2">
+                    <span className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-fuchsia-500 animate-pulse" />
+                    <span className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-fuchsia-500 blur-sm opacity-60" />
+                  </span>
+                  <span className="transition-colors duration-300 group-hover:text-zinc-200">{f}</span>
+                </span>
+              ))}
+            </motion.div>
+          </motion.div>
         </div>
       </div>
 

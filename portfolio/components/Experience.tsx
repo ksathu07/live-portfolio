@@ -1,6 +1,7 @@
 "use client";
 
 import { profile } from "@/lib/profile";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 function dateLabel(e: { startYear?: string | null; endYear?: string | null; startDate?: string | null; endDate?: string | null; present?: boolean }) {
@@ -127,6 +128,14 @@ export default function Experience() {
   const experience = profile.experience ?? [];
   const education = profile.education ?? [];
 
+  // Scroll-linked timeline: the line draws itself as you scroll (cinematic).
+  const lineRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: lineRef,
+    offset: ["start 80%", "end 85%"],
+  });
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
   return (
     <section id="experience" className="relative mx-auto max-w-6xl px-6 py-28">
       <div className="pointer-events-none absolute right-0 bottom-0 h-[300px] w-[300px] rounded-full bg-violet-600/10 blur-[100px]" />
@@ -142,8 +151,13 @@ export default function Experience() {
           <div className="relative">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-400 mb-6">Experience</h3>
             <div className="relative space-y-8 border-l-2 border-white/10 pl-7">
-              {/* Animated line fill */}
-              <div className="absolute left-[-2px] top-0 w-0.5 h-full bg-gradient-to-b from-violet-500 via-cyan-500 to-fuchsia-500 opacity-30" />
+              {/* Scroll-linked line fill */}
+              <div ref={lineRef} className="absolute left-[-2px] top-0 h-full w-0.5 bg-white/10">
+                <motion.div
+                  style={{ height: lineHeight }}
+                  className="w-full bg-gradient-to-b from-violet-500 via-cyan-500 to-fuchsia-500 shadow-[0_0_12px_rgba(139,92,246,0.6)]"
+                />
+              </div>
               {experience.map((x, i) => (
                 <TimelineItem key={i} item={x} index={i} side="left" />
               ))}
