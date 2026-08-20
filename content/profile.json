@@ -6,7 +6,7 @@
     "tagline": "Curious engineer-in-the-making, turning bold ideas into polished, human-centered products — from national healthcare prototypes to live hackathon apps and edited reels.",
     "location": "Sri Lanka",
     "email": "ksathu.07@gmail.com",
-    "phone": null,
+    "phone": "9962436833",
     "availability": "Open to AI/ML and full-stack internships, and creative tech collaborations",
     "about": [
       "AI & ML undergrad at SRM Institute of Science and Technology (Ramapuram), with a research-driven A-Level record — A* Mathematics, A-level passes in Further Mathematics, Physics and Accounting.",
@@ -24,7 +24,12 @@
       "dribbble": null,
       "website": null
     },
-    "extraLinks": [],
+    "extraLinks": [
+      {
+        "label": "College email",
+        "url": "mailto:sk2886@srmist.edu.in"
+      }
+    ],
     "facts": [
       {
         "label": "B.Tech CSE · AI & ML",
@@ -37,6 +42,10 @@
       {
         "label": "GitHub public repos",
         "value": "29"
+      },
+      {
+        "label": "Based in",
+        "value": "Chennai, India"
       }
     ]
   },
@@ -58,7 +67,8 @@
       "startYear": "2025",
       "endYear": "2025",
       "details": [
-        "Mathematics A* · Further Mathematics A · Physics B · Accounting A"
+        "Mathematics A* · Further Mathematics A · Physics B · Accounting A",
+        "Percentage: 84.46% (Mathematics Stream, Negombo)"
       ],
       "source": "personal/myself/About Me.docx"
     },
@@ -68,7 +78,8 @@
       "startYear": "2023",
       "endYear": "2023",
       "details": [
-        "Mathematics 9 · Physics 9 · Biology 8 · Chemistry 8 · ICT 7 · English 6 · Commerce 5"
+        "Mathematics 9 · Physics 9 · Biology 8 · Chemistry 8 · ICT 7 · English 6 · Commerce 5",
+        "Percentage: 72.96% (Science Stream, Negombo)"
       ],
       "source": "personal/myself/About Me.docx"
     }
@@ -220,6 +231,10 @@
         },
         {
           "name": "Sinhala",
+          "level": "advanced"
+        },
+        {
+          "name": "French",
           "level": "beginner"
         }
       ]
@@ -519,34 +534,28 @@
   ],
   "achievements": [
     {
+      "title": "Certificate of Excellence — School Best Results (IAL 2025)",
+      "date": "2026-07",
+      "details": "Awarded for achieving the Best Result in the International Advanced Level Mathematics Stream during the 2025 academic year.",
+      "source": "personal/myself/About Me.docx"
+    },
+    {
       "title": "Certificate of Excellence — Top Achiever in Mathematics (O/L 2023)",
       "date": "2023",
       "details": "Awarded for achieving the highest mathematics score in school — 184 out of 200.",
       "source": "personal/myself/About Me.docx"
     },
     {
-      "title": "Certificate of Excellence — Outstanding Performance in Mathematics (2024)",
-      "date": "2024",
-      "details": null,
+      "title": "Certificate of Excellence — Top Achiever in Pure Mathematics U2 (A/S 2025)",
+      "date": "2025-08",
+      "details": "Awarded for scoring full marks in Pure Mathematics Unit 2.",
       "source": "personal/myself/About Me.docx"
     },
     {
-      "title": "Certificate of Excellence — Outstanding Performance in Physics (2024)",
-      "date": "2024",
-      "details": null,
-      "source": "personal/myself/About Me.docx"
-    },
-    {
-      "title": "Certificate of Excellence — Outstanding Performance in Further Mathematics (2024)",
-      "date": "2024",
-      "details": null,
-      "source": "personal/myself/About Me.docx"
-    },
-    {
-      "title": "Certificate of Excellence — Top Achiever in Pure Mathematics U2 (A/S 2024)",
-      "date": "2024",
-      "details": "Awarded for achieving 100 out of 100 in Pure Mathematics Unit 2.",
-      "source": "personal/myself/About Me.docx"
+      "title": "Certificate of Excellence — Top Achiever in Pure Mathematics U3 (A/S 2025)",
+      "date": "2025-08",
+      "details": "Awarded for scoring full marks in Pure Mathematics Unit 3.",
+      "source": "personal/Haveloc CV/Haveloc-2nd Year CV.pdf"
     },
     {
       "title": "Certificate of Excellence — Top Achiever in Pure Mathematics U4 (A/S 2024)",
@@ -555,10 +564,35 @@
       "source": "personal/myself/About Me.docx"
     },
     {
-      "title": "Certificate of Excellence — School Best Results (IAL 2025)",
-      "date": "2025",
-      "details": "Awarded for getting A*, 2A, B in the Edexcel IAL examination.",
+      "title": "Certificate of Excellence — Outstanding Performance in Mathematics (IAL 2025)",
+      "date": "2026-07",
+      "details": "Recognized for Outstanding Performance in International Advanced Level Mathematics during the 2025 academic year.",
       "source": "personal/myself/About Me.docx"
+    },
+    {
+      "title": "Certificate of Excellence — Outstanding Performance in Further Mathematics (IAL 2025)",
+      "date": "2026-07",
+      "details": "Recognized for Outstanding Performance in International Advanced Level Further Mathematics.",
+      "source": "personal/myself/About Me.docx"
+    },
+    {
+      "title": "Certificate of Excellence — Outstanding Performance in Physics (IAL 2025)",
+      "date": "2026-07",
+      "details": "Recognized for Outstanding Performance in International Advanced Level Physics.",
+      "source": "personal/myself/About Me.docx"
+    },
+    {
+      "title": "Certificate of Excellence — All Round Performance (Senior B, 2024–25)",
+      "date": "2025-08",
+      "details": "Recognized for All-Around Performance in the Senior B division during the 2024–2025 academic year — balanced academic and extracurricular excellence.",
+      "source": "personal/Haveloc CV/Haveloc-2nd Year CV.pdf"
+    },
+    {
+      "title": "KALLOS 2026 AI Auction — Runner-up",
+      "date": "2026-02",
+      "place": "SRM Easwari Engineering College",
+      "details": "Runner-up in a 3-member team: Round 1 tested visual memory, communication and teamwork via timed image generation; Round 2 auctioned AI tools, prompts and generation time within a limited budget.",
+      "source": "personal/Haveloc CV/Haveloc-2nd Year CV.pdf"
     },
     {
       "title": "FIDE Blitz Chess Rating 1511",
@@ -572,12 +606,13 @@
       "organization": "Adventist International School",
       "role": "Prefect",
       "type": "leadership",
-      "startDate": null,
-      "endDate": null,
+      "startDate": "2021-01",
+      "endDate": "2024-01",
       "present": false,
       "bullets": [
-        "Three-year tenure — led student teams and ran school events.",
-        "Developed communication, coordination and people skills."
+        "Student governance & disciplinary oversight: managed campus discipline, coordinated daily student assemblies, and served as liaison between students and administration across three consecutive terms.",
+        "Event coordination: planned and executed large-scale school events, academic functions and extracurricular programs.",
+        "Mentorship & leadership: mentored junior prefects and student groups — teamwork, conflict resolution and accountability."
       ],
       "source": "personal/myself/About Me.docx"
     },
@@ -616,14 +651,27 @@
         "Taught and assisted junior students during teacher absences and free time."
       ],
       "source": "personal/myself/About Me.docx"
+    },
+    {
+      "organization": "Adventist International School (Branson House)",
+      "role": "Under-20 Track & Field Individual Champion",
+      "type": "sports",
+      "startDate": "2025-01",
+      "endDate": "2025-01",
+      "present": false,
+      "bullets": [
+        "Secured the Under-20 Individual Championship at the annual Inter-House Sports Meet.",
+        "1st place in 800m, 1500m and Long Jump; maximized point contributions for Branson House."
+      ],
+      "source": "personal/Haveloc CV/Haveloc-2nd Year CV.pdf"
     }
   ],
   "certifications": [
     {
       "title": "Python for Beginners",
-      "issuer": null,
-      "date": null,
-      "year": null,
+      "issuer": "University of Moratuwa (Open Learning Platform)",
+      "date": "2026-08",
+      "year": "2026",
       "proof": {
         "id": "course_certificates_python_for_beginners_e_certificate",
         "kind": "document"
@@ -658,6 +706,55 @@
       "path": "myself/My Image.jpg.jpeg",
       "source": "personal/myself",
       "label": "Profile photo"
+    },
+    "award_certificates_all_rounder": {
+      "id": "award_certificates_all_rounder",
+      "kind": "document",
+      "path": "Award certificates/All rounder.pdf",
+      "source": "personal/Award certificates",
+      "label": "All Round Performance certificate"
+    },
+    "award_certificates_best_result": {
+      "id": "award_certificates_best_result",
+      "kind": "document",
+      "path": "Award certificates/Best result.pdf",
+      "source": "personal/Award certificates",
+      "label": "Best Result certificate"
+    },
+    "award_certificates_pure_u2": {
+      "id": "award_certificates_pure_u2",
+      "kind": "document",
+      "path": "Award certificates/Pure U2.pdf",
+      "source": "personal/Award certificates",
+      "label": "Top Achiever Pure Mathematics U2 certificate"
+    },
+    "extra_curricular_school_prefect": {
+      "id": "extra_curricular_school_prefect",
+      "kind": "document",
+      "path": "Extra Circular Activities/School Prefect.pdf",
+      "source": "personal/Extra Circular Activities",
+      "label": "School Prefect certificate"
+    },
+    "extra_curricular_under20_champion": {
+      "id": "extra_curricular_under20_champion",
+      "kind": "document",
+      "path": "Extra Circular Activities/Under 20 Champion.pdf",
+      "source": "personal/Extra Circular Activities",
+      "label": "Under-20 Champion certificate"
+    },
+    "myself_al_certificate": {
+      "id": "myself_al_certificate",
+      "kind": "document",
+      "path": "myself/AL_certificate.pdf",
+      "source": "personal/myself",
+      "label": "A-Level certificate"
+    },
+    "myself_twelfth_proof": {
+      "id": "myself_twelfth_proof",
+      "kind": "document",
+      "path": "myself/SATHURSAN KAMALANATHAN_twelfth.pdf",
+      "source": "personal/myself",
+      "label": "12th proof document"
     }
   },
   "meta": {
