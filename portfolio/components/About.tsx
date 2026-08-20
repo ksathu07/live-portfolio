@@ -57,7 +57,7 @@ export default function About() {
     { value: profile.projects?.length ?? 0, label: "Projects shipped", suffix: "+" },
     { value: profile.achievements?.length ?? 0, label: "Awards earned", suffix: "" },
     { value: profile.skills?.reduce((a, c) => a + c.items.length, 0) ?? 0, label: "Skills mastered", suffix: "+" },
-    { value: 2, label: "Internships", suffix: "" },
+    { value: profile.experience?.length ?? 0, label: "Leadership & roles", suffix: "" },
   ];
 
   // 3D tilt + spotlight (ported from the cinematic reference)
